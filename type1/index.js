@@ -1,4 +1,4 @@
-// Параллакс эффект для фона
+
 document.addEventListener("mousemove", (e) => {
   const overlay = document.querySelector(".background-overlay");
   const x = e.clientX / window.innerWidth;
@@ -6,7 +6,7 @@ document.addEventListener("mousemove", (e) => {
   overlay.style.transform = `translate(-${x * 15}px, -${y * 15}px)`;
 });
 
-// Плавное появление элементов
+
 window.addEventListener("load", () => {
   const elements = document.querySelectorAll(".glass");
   elements.forEach((el) => {
