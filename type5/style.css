@@ -51,11 +51,13 @@ body {
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
-  color: var(--text-color);
+  /* color: var(--text-color); */
+  color: #f5f7fa;
 }
 
 .nav a {
-  color: var(--text-color);
+  /* color: var(--text-color); */
+  color: #f5f7fa;
   text-decoration: none;
   margin-left: 2rem;
   transition: all 0.3s ease;
