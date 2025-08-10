@@ -15,22 +15,22 @@ h3 {
 
 .back-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
-  font-size: 14px;
-  border: none;
+  top: 16px; /* чуть ниже верхнего края */
+  right: 16px; /* чуть левее края */
+  padding: 6px 12px;
+  font-size: 13px;
   background-color: #f4a;
-  color: white;
+  color: #fff;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10; /* поверх остальных элементов */
 }
 
 .hero-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section {
@@ -75,20 +75,28 @@ section > ul {
 .products ul {
   max-width: 700px;
   margin: 0 auto;
+  padding: 0;
+  list-style: none;
   text-align: left;
 }
 
 .products li {
-  font-size: 1.1rem;
-  padding: 10px 0;
+  position: relative;
+  padding: 14px 100px 14px 0; /* справа место под цену ~100px */
   border-bottom: 1px solid #f0dbe2;
-  display: flex;
-  justify-content: space-between;
+  font-size: 1.05rem;
+  line-height: 1.45; /* комфортный перенос длинных строк */
 }
 
-.products span {
-  font-weight: bold;
+.products li span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); /* всегда по центру строки */
+  white-space: nowrap; /* цена не ломается */
+  font-weight: 700;
   color: #d04e8c;
+  text-align: right;
 }
 
 /* Цены */
@@ -118,13 +126,12 @@ section > ul {
 }
 
 /* Адаптивность */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
 
-  .card {
-    width: 100%;
-    max-width: 300px;
+@media (max-width: 600px) {
+  .back-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    top: 10px;
+    right: 10px;
   }
 }
