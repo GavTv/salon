@@ -15,22 +15,22 @@ h3 {
 
 .back-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
-  font-size: 14px;
-  border: none;
+  top: 16px; /* чуть ниже верхнего края */
+  right: 16px; /* чуть левее края */
+  padding: 6px 12px;
+  font-size: 13px;
   background-color: #f4a;
-  color: white;
+  color: #fff;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10; /* поверх остальных элементов */
 }
 
 .hero-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section {
@@ -127,15 +127,11 @@ section > ul {
 
 /* Адаптивность */
 
-@media (max-width: 360px) {
-  .products li {
-    padding-right: 0;
-  }
-  .products li span {
-    position: static;
-    transform: none;
-    display: block;
-    margin-top: 6px; /* цена под текстом */
-    text-align: left;
+@media (max-width: 600px) {
+  .back-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    top: 10px;
+    right: 10px;
   }
 }
