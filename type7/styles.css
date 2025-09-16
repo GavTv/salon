@@ -87,16 +87,26 @@ section > ul {
   font-size: 1.05rem;
   line-height: 1.45; /* комфортный перенос длинных строк */
 }
-
-.products li span {
+.products li a {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%); /* всегда по центру строки */
-  white-space: nowrap; /* цена не ломается */
-  font-weight: 700;
-  color: #d04e8c;
-  text-align: right;
+  transform: translateY(-50%);
+  text-decoration: none;
+}
+
+.products li span {
+  display: inline-block;
+  background-color: #f4a;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.products li span:hover {
+  background-color: #d04e8c;
 }
 
 /* Цены */

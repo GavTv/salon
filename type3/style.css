@@ -205,6 +205,7 @@ h1::after {
   opacity: 0.8;
 }
 
+
 /* ===== Адаптация ===== */
 @media (max-width: 768px) {
   .section {
