@@ -37,11 +37,10 @@ const Landing = () => {
         <motion.div 
           className="mx-4 w-full max-w-3xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
           style={{
-            background: "hsl(var(--background) / 0.06)",
-            backdropFilter: "blur(6px)",
-            WebkitBackdropFilter: "blur(6px)",
-            border: "1px solid hsl(var(--border) / 0.22)",
-            boxShadow: "0 10px 32px -28px hsl(var(--foreground) / 0.30)",
+            background: "rgba(180, 180, 170, 0.35)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
           }}
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -75,22 +74,22 @@ const Landing = () => {
           >
             <Link 
               to="/services"
-              className="w-full max-w-xs px-8 py-4 rounded-xl text-white/90 font-medium uppercase tracking-widest text-sm hover:bg-white/20 transition-all duration-300 hover:scale-105"
+              className="w-full max-w-xs px-8 py-4 rounded-full text-foreground/80 font-medium uppercase tracking-widest text-sm hover:opacity-80 transition-all duration-300 hover:scale-105"
               style={{
-                background: "rgba(255, 255, 255, 0.15)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
+                fontFamily: "'Montserrat', sans-serif",
+                background: "rgba(200, 195, 185, 0.6)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
               }}
             >
               Открыть каталог
             </Link>
             <Link 
               to="/contacts"
-              className="w-full max-w-xs px-8 py-4 rounded-xl text-white/90 font-medium uppercase tracking-widest text-sm hover:bg-white/20 transition-all duration-300 hover:scale-105"
+              className="w-full max-w-xs px-8 py-4 rounded-full text-foreground/80 font-medium uppercase tracking-widest text-sm hover:opacity-80 transition-all duration-300 hover:scale-105"
               style={{
-                background: "rgba(255, 255, 255, 0.15)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
+                fontFamily: "'Montserrat', sans-serif",
+                background: "rgba(200, 195, 185, 0.6)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
               }}
             >
               О нас
