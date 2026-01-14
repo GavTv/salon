@@ -49,30 +49,19 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Full Screen */}
       <div
-        className={`lg:hidden fixed inset-0 top-16 bg-black/50 transition-opacity duration-300 ${
-          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      />
-
-      {/* Mobile Menu Slide-in */}
-      <div
-        className={`lg:hidden fixed top-16 right-0 h-[calc(100vh-4rem)] w-72 bg-background shadow-xl transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 top-16 bg-background transition-transform duration-300 ease-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="p-6 flex flex-col gap-4">
-          {filteredNavItems.map((item, index) => (
+        <nav className="container py-8 flex flex-col gap-4">
+          {filteredNavItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setIsMenuOpen(false)}
-              className="font-heading text-xl text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
-              style={{ 
-                transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
-              }}
+              className="font-heading text-2xl text-foreground hover:text-primary transition-colors py-3 border-b border-border/50"
             >
               {item.label}
             </Link>
