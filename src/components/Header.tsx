@@ -15,10 +15,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const filteredNavItems = navItems.filter(
-    (item) => item.path !== location.pathname
-  );
-
   return (
     <>
       <header
@@ -33,11 +29,15 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {filteredNavItems.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+                className={`text-sm transition-colors ${
+                  location.pathname === item.path
+                    ? "text-foreground font-medium"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
               >
                 {item.label}
               </Link>
@@ -64,12 +64,16 @@ const Header = () => {
         aria-hidden={!isMenuOpen}
       >
         <nav className="container py-8 flex flex-col gap-4">
-          {filteredNavItems.map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setIsMenuOpen(false)}
-              className="font-heading text-2xl text-foreground hover:text-primary transition-colors py-3 border-b border-border/50"
+              className={`font-heading text-2xl transition-colors py-3 border-b border-border/50 ${
+                location.pathname === item.path
+                  ? "text-primary"
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               {item.label}
             </Link>
