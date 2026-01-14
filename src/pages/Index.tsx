@@ -1,62 +1,132 @@
 import Layout from "@/components/Layout";
 import BookButton from "@/components/BookButton";
-import { Sun } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import HeroIcon from "@/components/HeroIcon";
+import { Sun, Sparkles, Clock, Shield } from "lucide-react";
+import { motion } from "framer-motion";
+
+const services = [
+  { name: "Вертикальный солярий", price: "15 ₽/мин" },
+  { name: "Горизонтальный солярий", price: "12 ₽/мин" },
+  { name: "Абонемент 100 минут", price: "1200 ₽" },
+  { name: "Крем для загара", price: "от 100 ₽" },
+];
+
+const features = [
+  { icon: Sparkles, title: "Современное оборудование", description: "Новейшие солярии с равномерным загаром" },
+  { icon: Clock, title: "Быстрый результат", description: "Красивый загар уже после первого сеанса" },
+  { icon: Shield, title: "Безопасность", description: "Профессиональный подбор времени и типа" },
+];
 
 const Index = () => {
   return (
     <Layout>
       <div className="container py-12 md:py-20">
         {/* Hero Section */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-            <Sun className="w-8 h-8 text-primary" />
-          </div>
-          <h1 className="section-title">Солярий</h1>
-          <p className="text-muted-foreground leading-relaxed mb-8">
+        <AnimatedSection className="max-w-2xl mx-auto text-center mb-16">
+          <HeroIcon icon={Sun} />
+          
+          <motion.h1 
+            className="section-title mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Солярий
+          </motion.h1>
+          
+          <motion.p 
+            className="text-muted-foreground leading-relaxed mb-8 text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             Профессиональные солярии для красивого и равномерного загара. 
             Современное оборудование и индивидуальный подход к каждому клиенту.
-          </p>
-          <BookButton />
-        </div>
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+          >
+            <BookButton />
+          </motion.div>
+        </AnimatedSection>
+
+        {/* Features */}
+        <AnimatedSection delay={0.2} className="mb-16">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className="text-center p-6 rounded-2xl bg-card/50 border border-border/30 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -4, borderColor: "hsl(var(--primary) / 0.3)" }}
+              >
+                <motion.div 
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  <feature.icon className="w-6 h-6" />
+                </motion.div>
+                <h3 className="font-heading text-lg text-foreground mb-2">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
 
         {/* Services */}
-        <div className="max-w-lg mx-auto">
-          <div className="service-card p-0 overflow-hidden">
+        <AnimatedSection delay={0.3} className="max-w-lg mx-auto">
+          <motion.div 
+            className="overflow-hidden rounded-2xl bg-card border border-border/30"
+            whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
+            transition={{ duration: 0.3 }}
+          >
             {/* Header */}
-            <div className="flex justify-between items-center px-6 py-4 border-b-2 border-primary/20">
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">Вид услуги</span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider">Стоимость</span>
+            <div className="flex justify-between items-center px-6 py-4 bg-gradient-to-r from-primary/5 to-accent/5 border-b border-border/30">
+              <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Вид услуги</span>
+              <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Стоимость</span>
             </div>
             
             {/* Rows */}
             <div>
-              <div className="flex justify-between items-center px-6 py-5 border-b border-border">
-                <span className="text-foreground font-medium">Вертикальный солярий</span>
-                <span className="text-primary font-semibold text-right">15 ₽/мин</span>
-              </div>
-              <div className="flex justify-between items-center px-6 py-5 border-b border-border">
-                <span className="text-foreground font-medium">Горизонтальный солярий</span>
-                <span className="text-primary font-semibold text-right">12 ₽/мин</span>
-              </div>
-              <div className="flex justify-between items-center px-6 py-5 border-b border-border">
-                <span className="text-foreground font-medium">Абонемент 100 минут</span>
-                <span className="text-primary font-semibold text-right">1200 ₽</span>
-              </div>
-              <div className="flex justify-between items-center px-6 py-5">
-                <span className="text-foreground font-medium">Крем для загара</span>
-                <span className="text-primary font-semibold text-right">от 100 ₽</span>
-              </div>
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.name}
+                  className="flex justify-between items-center px-6 py-5 border-b border-border/20 last:border-0 group cursor-default"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  whileHover={{ backgroundColor: "hsl(var(--accent) / 0.3)" }}
+                >
+                  <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                    {service.name}
+                  </span>
+                  <motion.span 
+                    className="text-primary font-semibold text-right"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {service.price}
+                  </motion.span>
+                </motion.div>
+              ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </AnimatedSection>
 
         {/* Info */}
-        <div className="max-w-xl mx-auto mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            Перед первым посещением рекомендуем проконсультироваться с нашими специалистами 
+        <AnimatedSection delay={0.4} className="max-w-xl mx-auto mt-12 text-center">
+          <p className="text-sm text-muted-foreground bg-secondary/30 rounded-xl p-4 border border-border/20">
+            💡 Перед первым посещением рекомендуем проконсультироваться с нашими специалистами 
             для подбора оптимального времени и типа загара.
           </p>
-        </div>
+        </AnimatedSection>
       </div>
     </Layout>
   );
