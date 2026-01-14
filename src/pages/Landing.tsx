@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import landingBg from "@/assets/landing-bg.jpg";
 
 const Landing = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Background with gradient overlay */}
+      {/* Background image */}
       <div 
-        className="fixed inset-0 -z-10"
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{
-          background: "linear-gradient(135deg, hsl(35, 30%, 92%) 0%, hsl(35, 25%, 85%) 50%, hsl(30, 20%, 80%) 100%)"
+          backgroundImage: `url(${landingBg})`,
         }}
       />
       
-      {/* Decorative gradient overlay */}
+      {/* Overlay for better text readability */}
       <div 
         className="fixed inset-0 -z-5 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 30% 20%, hsl(35, 40%, 90%, 0.6) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, hsl(30, 35%, 88%, 0.5) 0%, transparent 50%)"
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%)"
         }}
       />
-
       {/* Header */}
       <motion.header 
         className="fixed top-0 left-0 w-full h-20 flex items-center justify-center z-50 backdrop-blur-xl bg-card/70 border-b border-white/40 shadow-lg"
