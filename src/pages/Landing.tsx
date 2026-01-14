@@ -37,18 +37,18 @@ const Landing = () => {
         <motion.div 
           className="mx-4 w-full max-w-2xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
           style={{
-            background: "rgba(255, 255, 255, 0.25)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            border: "1px solid rgba(255, 255, 255, 0.35)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+            background: "rgba(245, 239, 230, 0.5)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255, 255, 255, 0.4)",
+            boxShadow: "0 4px 30px rgba(149, 137, 117, 0.2)",
           }}
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
           <motion.h1 
-            className="text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-light whitespace-nowrap mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-light mb-4"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
