@@ -40,11 +40,16 @@
 
     /* Custom salon colors */
     --cream: 30 33% 93%;
-    --cream-transparent: 30 33% 93% / 0.7;
+    --cream-transparent: 30 33% 93% / 0.8;
     --warm-white: 30 30% 98%;
     --soft-brown: 25 20% 35%;
-    --rose: 12 45% 65%;
-    --rose-hover: 12 50% 55%;
+    --rose: 12 50% 60%;
+    --rose-hover: 12 55% 50%;
+    
+    /* Fresh accent colors */
+    --coral: 16 85% 65%;
+    --peach: 25 90% 75%;
+    --gold: 40 70% 55%;
 
     /* Typography */
     --font-heading: 'Cormorant Garamond', serif;
@@ -125,22 +130,29 @@
   }
 
   .btn-book {
-    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-colors rounded-md;
-    background-color: hsl(var(--rose));
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium transition-all duration-300 rounded-xl relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--rose)) 0%, hsl(var(--coral)) 100%);
     color: hsl(var(--primary-foreground));
+    box-shadow: 0 4px 20px -4px hsl(var(--rose) / 0.4);
   }
 
   .btn-book:hover {
-    background-color: hsl(var(--rose-hover));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -4px hsl(var(--rose) / 0.5);
+  }
+
+  .btn-book:active {
+    transform: translateY(0);
   }
 
   .service-card {
-    @apply p-6 rounded-lg transition-shadow;
-    background-color: hsl(var(--warm-white));
+    @apply p-6 rounded-2xl transition-all duration-300 border border-border/30;
+    background: linear-gradient(145deg, hsl(var(--warm-white)) 0%, hsl(var(--card)) 100%);
   }
 
   .service-card:hover {
-    box-shadow: 0 4px 20px -4px hsl(var(--soft-brown) / 0.1);
+    box-shadow: 0 8px 30px -8px hsl(var(--soft-brown) / 0.15);
+    border-color: hsl(var(--primary) / 0.2);
   }
 
   .promo-card {

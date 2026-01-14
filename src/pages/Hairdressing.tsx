@@ -1,7 +1,10 @@
 import Layout from "@/components/Layout";
-import ServiceSection from "@/components/ServiceSection";
 import BookButton from "@/components/BookButton";
-import { Scissors } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import HeroIcon from "@/components/HeroIcon";
+import InteractiveServiceCard from "@/components/InteractiveServiceCard";
+import { Scissors, Palette, Sparkles, Droplet } from "lucide-react";
+import { motion } from "framer-motion";
 
 const haircutServices = [
   { name: "Мужская стрижка", price: "от 950 ₽" },
@@ -39,29 +42,68 @@ const Hairdressing = () => {
     <Layout>
       <div className="container py-12 md:py-20">
         {/* Hero */}
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-            <Scissors className="w-8 h-8 text-primary" />
-          </div>
-          <h1 className="section-title">Парикмахерские услуги</h1>
-          <p className="text-muted-foreground leading-relaxed">
+        <AnimatedSection className="max-w-2xl mx-auto text-center mb-12">
+          <HeroIcon icon={Scissors} />
+          
+          <motion.h1 
+            className="section-title mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Парикмахерские услуги
+          </motion.h1>
+          
+          <motion.p 
+            className="text-muted-foreground leading-relaxed text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             Профессиональный подход к созданию вашего идеального образа. 
             Опытные мастера и качественные материалы.
-          </p>
-        </div>
+          </motion.p>
+        </AnimatedSection>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <ServiceSection title="Стрижка и укладка" items={haircutServices} />
-          <ServiceSection title="Окрашивание" items={coloringServices} />
-          <ServiceSection title="Уход за волосами" items={careServices} />
-          <ServiceSection title="Дополнительные услуги" items={additionalServices} />
+          <AnimatedSection delay={0.1}>
+            <InteractiveServiceCard 
+              title="Стрижка и укладка" 
+              items={haircutServices} 
+              icon={Scissors}
+            />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.2}>
+            <InteractiveServiceCard 
+              title="Окрашивание" 
+              items={coloringServices} 
+              icon={Palette}
+            />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.3}>
+            <InteractiveServiceCard 
+              title="Уход за волосами" 
+              items={careServices} 
+              icon={Sparkles}
+            />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.4}>
+            <InteractiveServiceCard 
+              title="Дополнительные услуги" 
+              items={additionalServices} 
+              icon={Droplet}
+            />
+          </AnimatedSection>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <AnimatedSection delay={0.5} className="text-center mt-12">
           <BookButton />
-        </div>
+        </AnimatedSection>
       </div>
     </Layout>
   );
