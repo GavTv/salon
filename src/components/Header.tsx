@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { path: "/", label: "Солярий" },
+  { path: "/services", label: "Солярий" },
   { path: "/hairdressing", label: "Парикмахерские услуги" },
   { path: "/cosmetology", label: "Косметология" },
   { path: "/lpg-massage", label: "LPG массаж" },
