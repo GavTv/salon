@@ -51,9 +51,10 @@ const Header = () => {
 
       {/* Mobile Menu Full Screen */}
       <div
-        className={`lg:hidden fixed inset-0 top-16 bg-background transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 top-16 z-50 bg-[hsl(var(--background))] transition-transform duration-300 ease-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ backgroundColor: 'hsl(35, 30%, 96%)' }}
       >
         <nav className="container py-8 flex flex-col gap-4">
           {filteredNavItems.map((item) => (
