@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import BookButton from "@/components/BookButton";
+import FloatingBookButton from "@/components/FloatingBookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import { Sun, Sparkles, Clock, Shield } from "lucide-react";
@@ -52,6 +53,11 @@ const Index = () => {
           >
             <BookButton />
           </motion.div>
+          
+          {/* Floating circular button */}
+          <div className="mt-8">
+            <FloatingBookButton size="lg" />
+          </div>
         </AnimatedSection>
 
         {/* Features */}
