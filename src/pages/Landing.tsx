@@ -55,7 +55,7 @@ const Landing = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-foreground/70 text-base md:text-lg mb-10 font-normal"
+            className="text-foreground/70 text-sm md:text-base mb-10 font-normal"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
