@@ -45,7 +45,7 @@ const Landing = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h1 
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground font-normal whitespace-nowrap mb-4"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground font-normal md:whitespace-nowrap mb-4"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
