@@ -37,7 +37,7 @@ const Landing = () => {
         <motion.div 
           className="mx-4 w-full max-w-3xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
           style={{
-            background: "rgba(180, 180, 170, 0.35)",
+            background: "rgba(190, 190, 180, 0.42)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
           }}
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
