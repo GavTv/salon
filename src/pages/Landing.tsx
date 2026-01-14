@@ -47,7 +47,8 @@ const Landing = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h1 
-            className="font-sans text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-light whitespace-nowrap mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-light whitespace-nowrap mb-4"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -56,7 +57,8 @@ const Landing = () => {
           </motion.h1>
           
           <motion.p 
-            className="font-sans text-muted-foreground text-sm md:text-base mb-10 font-light"
+            className="text-muted-foreground text-sm md:text-base mb-10 font-light"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
