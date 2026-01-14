@@ -20,39 +20,31 @@ const Index = () => {
         </div>
 
         {/* Services */}
-        <div className="max-w-md mx-auto">
-          <div className="service-card">
-            <h2 className="font-heading text-xl md:text-2xl text-foreground mb-6">
-              Услуги солярия
-            </h2>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Вертикальный солярий</span>
-                <div className="flex items-center gap-4">
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">1 мин</span>
-                  <span className="price-tag whitespace-nowrap font-semibold min-w-[70px] text-right">от 15 ₽</span>
-                </div>
+        <div className="max-w-lg mx-auto">
+          <div className="service-card p-0 overflow-hidden">
+            {/* Header */}
+            <div className="flex justify-between items-center px-6 py-3 border-b border-border/50">
+              <span className="text-xs text-muted-foreground uppercase tracking-wider">Вид услуги</span>
+              <span className="text-xs text-muted-foreground uppercase tracking-wider">Стоимость</span>
+            </div>
+            
+            {/* Rows */}
+            <div className="divide-y divide-border/30">
+              <div className="flex justify-between items-center px-6 py-4 hover:bg-muted/30 transition-colors">
+                <span className="text-foreground font-medium">Вертикальный солярий</span>
+                <span className="text-primary font-semibold text-right">15 ₽/мин</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Горизонтальный солярий</span>
-                <div className="flex items-center gap-4">
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">1 мин</span>
-                  <span className="price-tag whitespace-nowrap font-semibold min-w-[70px] text-right">от 12 ₽</span>
-                </div>
+              <div className="flex justify-between items-center px-6 py-4 hover:bg-muted/30 transition-colors">
+                <span className="text-foreground font-medium">Горизонтальный солярий</span>
+                <span className="text-primary font-semibold text-right">12 ₽/мин</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Абонемент</span>
-                <div className="flex items-center gap-4">
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">100 мин</span>
-                  <span className="price-tag whitespace-nowrap font-semibold min-w-[70px] text-right">от 1200 ₽</span>
-                </div>
+              <div className="flex justify-between items-center px-6 py-4 hover:bg-muted/30 transition-colors">
+                <span className="text-foreground font-medium">Абонемент 100 минут</span>
+                <span className="text-primary font-semibold text-right">1200 ₽</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Крем для загара</span>
-                <div className="flex items-center gap-4">
-                  <span className="text-xs bg-transparent px-2 py-1 rounded invisible">—</span>
-                  <span className="price-tag whitespace-nowrap font-semibold min-w-[70px] text-right">от 100 ₽</span>
-                </div>
+              <div className="flex justify-between items-center px-6 py-4 hover:bg-muted/30 transition-colors">
+                <span className="text-foreground font-medium">Крем для загара</span>
+                <span className="text-primary font-semibold text-right">от 100 ₽</span>
               </div>
             </div>
           </div>
