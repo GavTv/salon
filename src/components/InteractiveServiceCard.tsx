@@ -53,7 +53,7 @@ const InteractiveServiceCard = ({
           {items.map((item, index) => (
             <motion.li
               key={index}
-              className="flex justify-between items-baseline gap-4 text-sm py-2 border-b border-border/30 last:border-0 group/item"
+              className="flex justify-between items-baseline gap-4 text-sm py-3 border-b border-primary/20 last:border-0 group/item"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
