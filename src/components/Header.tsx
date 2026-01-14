@@ -24,7 +24,7 @@ const Header = () => {
       >
         <div className="container flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="font-heading text-2xl md:text-3xl text-foreground">
-            Belleza
+            Novobeauty
           </Link>
 
           {/* Desktop Navigation */}
