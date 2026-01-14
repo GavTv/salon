@@ -35,7 +35,7 @@ const Landing = () => {
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 py-24">
         <motion.div 
-          className="mx-4 w-full max-w-3xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
+          className="mx-4 w-full max-w-xl text-center px-8 py-12 md:px-14 md:py-14 rounded-2xl"
           style={{
             background: "rgba(210, 210, 200, 0.50)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -45,7 +45,7 @@ const Landing = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h1 
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/90 font-medium whitespace-nowrap mb-4"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/90 font-normal whitespace-nowrap mb-4"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ const Landing = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-muted-foreground text-sm md:text-base mb-10 font-medium"
+            className="text-muted-foreground text-sm md:text-base mb-10 font-normal"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
