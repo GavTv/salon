@@ -14,7 +14,7 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
 
   return (
     <motion.a
-      href="https://wa.me/79001234567?text=Здравствуйте! Хочу записаться на приём."
+      href="https://t.me/+79850534761"
       target="_blank"
       rel="noopener noreferrer"
       className={`
