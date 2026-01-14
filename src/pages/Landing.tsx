@@ -71,7 +71,7 @@ const Landing = () => {
             transition={{ delay: 0.4 }}
           >
             <Link 
-              to="/services"
+              to="/catalog"
               className="w-full max-w-xs px-8 py-4 rounded-full text-foreground/80 font-medium uppercase tracking-widest text-sm hover:opacity-80 transition-all duration-300 hover:scale-105"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
