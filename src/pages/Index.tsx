@@ -27,20 +27,20 @@ const Index = () => {
             </h2>
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Вертикальный солярий, 1 мин</span>
-                <span className="price-tag whitespace-nowrap ml-4">от 15 ₽</span>
+                <span className="text-foreground/80 text-sm">Вертикальный солярий, <span className="font-semibold text-foreground">1 мин</span></span>
+                <span className="price-tag whitespace-nowrap ml-4 font-semibold">от 15 ₽</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Горизонтальный солярий, 1 мин</span>
-                <span className="price-tag whitespace-nowrap ml-4">от 12 ₽</span>
+                <span className="text-foreground/80 text-sm">Горизонтальный солярий, <span className="font-semibold text-foreground">1 мин</span></span>
+                <span className="price-tag whitespace-nowrap ml-4 font-semibold">от 12 ₽</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-foreground/80 text-sm">Абонемент 100 минут</span>
-                <span className="price-tag whitespace-nowrap ml-4">от 1200 ₽</span>
+                <span className="text-foreground/80 text-sm">Абонемент <span className="font-semibold text-foreground">100 минут</span></span>
+                <span className="price-tag whitespace-nowrap ml-4 font-semibold">от 1200 ₽</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-foreground/80 text-sm">Крем для загара</span>
-                <span className="price-tag whitespace-nowrap ml-4">от 100 ₽</span>
+                <span className="price-tag whitespace-nowrap ml-4 font-semibold">от 100 ₽</span>
               </div>
             </div>
           </div>
