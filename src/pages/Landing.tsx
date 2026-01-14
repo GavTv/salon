@@ -65,7 +65,7 @@ const Landing = () => {
             transition={{ delay: 0.8 }}
           >
             <Link 
-              to="/"
+              to="/services"
               className="px-8 py-4 rounded-xl backdrop-blur-md bg-primary/90 text-primary-foreground font-medium hover:bg-primary transition-all duration-300 hover:scale-105 hover:shadow-xl border border-white/20"
             >
               Открыть каталог
