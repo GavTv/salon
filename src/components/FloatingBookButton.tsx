@@ -18,6 +18,7 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
       target="_blank"
       rel="noopener noreferrer"
       className={`
+        fixed bottom-6 right-6 z-40
         ${sizeClasses[size]}
         rounded-full
         bg-gradient-to-br from-primary via-primary to-rose-400
