@@ -8,7 +8,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Адрес",
-    content: "г. Москва, ул. Примерная, д. 123",
+    content: "г. Москва, ул. Новослободская, д. 3, 3 этаж (БЦ Сафа)",
     link: null,
   },
   {
