@@ -20,29 +20,29 @@ const Index = () => {
         </div>
 
         {/* Services */}
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-md mx-auto">
           <div className="service-card">
             <h2 className="font-heading text-xl md:text-2xl text-foreground mb-6">
               Услуги солярия
             </h2>
-            <ul className="space-y-4">
-              <li className="flex justify-between items-baseline gap-4">
-                <span className="text-foreground/80">Вертикальный солярий (1 мин)</span>
-                <span className="price-tag">от 15 ₽</span>
-              </li>
-              <li className="flex justify-between items-baseline gap-4">
-                <span className="text-foreground/80">Горизонтальный солярий (1 мин)</span>
-                <span className="price-tag">от 12 ₽</span>
-              </li>
-              <li className="flex justify-between items-baseline gap-4">
-                <span className="text-foreground/80">Абонемент 100 минут</span>
-                <span className="price-tag">от 1200 ₽</span>
-              </li>
-              <li className="flex justify-between items-baseline gap-4">
-                <span className="text-foreground/80">Крем для загара</span>
-                <span className="price-tag">от 100 ₽</span>
-              </li>
-            </ul>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-foreground/80 text-sm">Вертикальный солярий, 1 мин</span>
+                <span className="price-tag whitespace-nowrap ml-4">от 15 ₽</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-foreground/80 text-sm">Горизонтальный солярий, 1 мин</span>
+                <span className="price-tag whitespace-nowrap ml-4">от 12 ₽</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-foreground/80 text-sm">Абонемент 100 минут</span>
+                <span className="price-tag whitespace-nowrap ml-4">от 1200 ₽</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-foreground/80 text-sm">Крем для загара</span>
+                <span className="price-tag whitespace-nowrap ml-4">от 100 ₽</span>
+              </div>
+            </div>
           </div>
         </div>
 
