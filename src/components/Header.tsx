@@ -51,7 +51,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-cream animate-fade-in overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-16 bg-background animate-fade-in">
           <nav className="container py-8 flex flex-col gap-6">
             {filteredNavItems.map((item) => (
               <Link
