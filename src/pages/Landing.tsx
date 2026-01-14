@@ -35,20 +35,20 @@ const Landing = () => {
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 py-24">
         <motion.div 
-          className="mx-4 w-full max-w-2xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
+          className="mx-4 w-full max-w-3xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
           style={{
-            background: "rgba(245, 239, 230, 0.5)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
-            border: "1px solid rgba(255, 255, 255, 0.4)",
-            boxShadow: "0 4px 30px rgba(149, 137, 117, 0.2)",
+            background: "hsl(var(--background) / 0.10)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            border: "1px solid hsl(var(--border) / 0.30)",
+            boxShadow: "0 12px 40px -28px hsl(var(--foreground) / 0.35)",
           }}
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
           <motion.h1 
-            className="text-2xl md:text-3xl lg:text-4xl text-foreground/90 font-light mb-4"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/90 font-light whitespace-nowrap mb-4"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
