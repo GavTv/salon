@@ -37,11 +37,11 @@ const Landing = () => {
         <motion.div 
           className="mx-4 w-full max-w-3xl text-center px-8 py-12 md:px-16 md:py-16 rounded-2xl"
           style={{
-            background: "hsl(var(--background) / 0.10)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-            border: "1px solid hsl(var(--border) / 0.30)",
-            boxShadow: "0 12px 40px -28px hsl(var(--foreground) / 0.35)",
+            background: "hsl(var(--background) / 0.06)",
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
+            border: "1px solid hsl(var(--border) / 0.22)",
+            boxShadow: "0 10px 32px -28px hsl(var(--foreground) / 0.30)",
           }}
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
