@@ -5,8 +5,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 nav-transparent">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="font-heading text-2xl md:text-3xl text-foreground">
-          Novobeauty
+        <Link 
+          to="/" 
+          className="text-xl md:text-2xl font-medium tracking-[4px] uppercase text-foreground hover:opacity-80 transition-opacity"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          NOVOBEAUTY
         </Link>
 
         <Link 
