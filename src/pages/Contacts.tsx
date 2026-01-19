@@ -64,14 +64,20 @@ const Contacts = () => {
             Контакты
           </motion.h1>
           
-          <motion.p 
-            className="text-muted-foreground leading-relaxed text-lg"
+          <motion.div 
+            className="text-muted-foreground leading-relaxed text-base space-y-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            Будем рады видеть вас в нашем салоне красоты.
-          </motion.p>
+            <p className="font-medium text-foreground">Уважаемые Дамы и Господа!</p>
+            <p>
+              Мы рады пригласить Вас в салон красоты "Novobeauty"! Салон находится в 2х минутах от ст.метро Новослободская.
+              Есть удобная стоянка для автомобилей.
+            </p>
+            <p>Наш адрес: г. Москва, ул.Новослободская, д.3, 3 этаж (БЦ Сафа).</p>
+            <p>Телефон: <a href="tel:+79850534761" className="text-primary hover:underline">+7 (985) 053-47-61</a></p>
+          </motion.div>
         </AnimatedSection>
 
         {/* Contact Info */}
