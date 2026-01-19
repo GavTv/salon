@@ -3,8 +3,14 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Scissors, Palette, Sparkles, Droplet } from "lucide-react";
+import { Scissors, Palette, Sparkles, Droplet, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Раздел 1: Стрижки и укладки
 const haircutServices = [
@@ -39,6 +45,26 @@ const hairCareServices = [
   { name: "Olaplex №1 и №2", price: "от 2500 ₽" },
 ];
 
+const ServiceList = ({ items }: { items: { name: string; price: string }[] }) => (
+  <div className="space-y-0">
+    {items.map((item, index) => (
+      <motion.div
+        key={index}
+        className={`flex justify-between items-baseline gap-4 py-3 ${
+          index !== items.length - 1 ? 'border-b border-foreground/10' : ''
+        }`}
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.05 }}
+      >
+        <span className="text-foreground/80 text-sm">{item.name}</span>
+        <span className="text-primary font-medium whitespace-nowrap text-sm">{item.price}</span>
+      </motion.div>
+    ))}
+  </div>
+);
+
 const Hairdressing = () => {
   return (
     <Layout>
@@ -68,7 +94,7 @@ const Hairdressing = () => {
         </AnimatedSection>
 
         {/* Раздел 1: Стрижки и укладки */}
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-8">
           <AnimatedSection delay={0.1}>
             <InteractiveServiceCard 
               title="Стрижки и укладки" 
@@ -78,36 +104,54 @@ const Hairdressing = () => {
           </AnimatedSection>
         </div>
 
-        {/* Раздел 2: Окрашивание волос */}
-        <div className="max-w-2xl mx-auto space-y-6">
+        {/* Раздел 2: Окрашивание волос с аккордеоном */}
+        <div className="max-w-2xl mx-auto">
           <AnimatedSection delay={0.2}>
-            <InteractiveServiceCard 
-              title="Окрашивание волос" 
-              items={coloringServices} 
-              icon={Palette}
-            />
-          </AnimatedSection>
-          
-          {/* Подраздел: Сложные окрашивания */}
-          <AnimatedSection delay={0.3}>
-            <div className="ml-4 md:ml-8">
-              <InteractiveServiceCard 
-                title="Сложные окрашивания" 
-                items={complexColoringServices} 
-                icon={Sparkles}
-              />
-            </div>
-          </AnimatedSection>
-          
-          {/* Подраздел: Уход за волосами */}
-          <AnimatedSection delay={0.4}>
-            <div className="ml-4 md:ml-8">
-              <InteractiveServiceCard 
-                title="Уход за волосами" 
-                items={hairCareServices} 
-                icon={Droplet}
-              />
-            </div>
+            <motion.div 
+              className="service-card overflow-hidden"
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.2 }}
+            >
+              {/* Заголовок раздела */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <Palette className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-heading text-xl md:text-2xl text-foreground">
+                  Окрашивание волос
+                </h3>
+              </div>
+
+              {/* Основные услуги окрашивания */}
+              <ServiceList items={coloringServices} />
+
+              {/* Подразделы в аккордеоне */}
+              <Accordion type="multiple" className="mt-4">
+                <AccordionItem value="complex" className="border-foreground/10">
+                  <AccordionTrigger className="py-3 text-foreground/90 hover:text-foreground hover:no-underline">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-primary" />
+                      <span className="font-medium">Сложные окрашивания</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-2 pb-4">
+                    <ServiceList items={complexColoringServices} />
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="care" className="border-foreground/10">
+                  <AccordionTrigger className="py-3 text-foreground/90 hover:text-foreground hover:no-underline">
+                    <div className="flex items-center gap-2">
+                      <Droplet className="w-4 h-4 text-primary" />
+                      <span className="font-medium">Уход за волосами</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-2 pb-4">
+                    <ServiceList items={hairCareServices} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
           </AnimatedSection>
         </div>
 
