@@ -6,35 +6,37 @@ import InteractiveServiceCard from "@/components/InteractiveServiceCard";
 import { Scissors, Palette, Sparkles, Droplet } from "lucide-react";
 import { motion } from "framer-motion";
 
+// Раздел 1: Стрижки и укладки
 const haircutServices = [
-  { name: "Мужская стрижка", price: "от 950 ₽" },
-  { name: "Женская стрижка", price: "от 1200 ₽" },
-  { name: "Детская стрижка", price: "от 700 ₽" },
-  { name: "Модельная стрижка", price: "от 1500 ₽" },
-  { name: "Укладка", price: "от 800 ₽" },
-  { name: "Вечерняя причёска", price: "от 2500 ₽" },
+  { name: "Мужские стрижки", price: "от 950 ₽" },
+  { name: "Женские стрижки", price: "от 1200 ₽" },
+  { name: "Укладки волос", price: "от 1500 ₽" },
+  { name: "Стрижка челки", price: "от 500 ₽" },
+  { name: "Прически/Косы", price: "от 2500 ₽" },
 ];
 
+// Раздел 2: Окрашивание волос
 const coloringServices = [
+  { name: "Окрашивание волос Kapous/Estel", price: "от 2000 ₽" },
+  { name: "Окрашивание волос от Loreal", price: "от 2500 ₽" },
   { name: "Тонирование", price: "от 1500 ₽" },
-  { name: "Однотонное окрашивание", price: "от 2500 ₽" },
-  { name: "Мелирование", price: "от 3500 ₽" },
-  { name: "Балаяж", price: "от 5000 ₽" },
-  { name: "Омбре", price: "от 4500 ₽" },
-  { name: "Сложное окрашивание", price: "от 7000 ₽" },
 ];
 
-const careServices = [
-  { name: "Ботокс для волос", price: "от 3000 ₽" },
-  { name: "Кератиновое выпрямление", price: "от 5000 ₽" },
-  { name: "Ламинирование", price: "от 2500 ₽" },
-  { name: "Восстанавливающая маска", price: "от 500 ₽" },
+// Подраздел: Сложные окрашивания
+const complexColoringServices = [
+  { name: "Корни", price: "от 2000 ₽" },
+  { name: "Полное", price: "от 3500 ₽" },
+  { name: "Блондирование волос", price: "от 2500 ₽" },
 ];
 
-const additionalServices = [
-  { name: "Стрижка чёлки", price: "от 300 ₽" },
-  { name: "Мытьё головы", price: "от 200 ₽" },
-  { name: "Сушка феном", price: "от 400 ₽" },
+// Подраздел: Уход за волосами
+const hairCareServices = [
+  { name: "Абсолютное счастье для волос от Lebel (Япония)", price: "от 2800 ₽" },
+  { name: "Ботокс волос (HONMA TOKIO) Биксипластия волос Nano Brazil", price: "от 3000 ₽" },
+  { name: "Кератиновое выпрямление Nano Brazil / Нанопластика волос (Aegla H2O Zero)", price: "от 3500 ₽" },
+  { name: "Ламинирование Constant Delight", price: "от 2000 ₽" },
+  { name: "Коллаген волос Nano Brazil", price: "от 3000 ₽" },
+  { name: "Olaplex №1 и №2", price: "от 2500 ₽" },
 ];
 
 const Hairdressing = () => {
@@ -65,38 +67,47 @@ const Hairdressing = () => {
           </motion.p>
         </AnimatedSection>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* Раздел 1: Стрижки и укладки */}
+        <div className="max-w-2xl mx-auto mb-12">
           <AnimatedSection delay={0.1}>
             <InteractiveServiceCard 
-              title="Стрижка и укладка" 
+              title="Стрижки и укладки" 
               items={haircutServices} 
               icon={Scissors}
             />
           </AnimatedSection>
-          
+        </div>
+
+        {/* Раздел 2: Окрашивание волос */}
+        <div className="max-w-2xl mx-auto space-y-6">
           <AnimatedSection delay={0.2}>
             <InteractiveServiceCard 
-              title="Окрашивание" 
+              title="Окрашивание волос" 
               items={coloringServices} 
               icon={Palette}
             />
           </AnimatedSection>
           
+          {/* Подраздел: Сложные окрашивания */}
           <AnimatedSection delay={0.3}>
-            <InteractiveServiceCard 
-              title="Уход за волосами" 
-              items={careServices} 
-              icon={Sparkles}
-            />
+            <div className="ml-4 md:ml-8">
+              <InteractiveServiceCard 
+                title="Сложные окрашивания" 
+                items={complexColoringServices} 
+                icon={Sparkles}
+              />
+            </div>
           </AnimatedSection>
           
+          {/* Подраздел: Уход за волосами */}
           <AnimatedSection delay={0.4}>
-            <InteractiveServiceCard 
-              title="Дополнительные услуги" 
-              items={additionalServices} 
-              icon={Droplet}
-            />
+            <div className="ml-4 md:ml-8">
+              <InteractiveServiceCard 
+                title="Уход за волосами" 
+                items={hairCareServices} 
+                icon={Droplet}
+              />
+            </div>
           </AnimatedSection>
         </div>
 
