@@ -3,7 +3,7 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Sparkles, Droplet, Eye, Syringe } from "lucide-react";
+import { Sparkles, Droplet, Eye, Syringe, Gem } from "lucide-react";
 import { motion } from "framer-motion";
 
 const eyebrows = [
@@ -29,6 +29,13 @@ const lipolytics = [
   { name: "LiGHT FiT 2 мл", price: "3500 ₽" },
   { name: "BiOGEL (стройность) 2 мл", price: "12000 ₽" },
   { name: "LiPO LONG коктейль для тела", price: "15000 ₽" },
+];
+
+const botox = [
+  { name: "ONE TOX (1 ед.)", price: "300 ₽" },
+  { name: "Межбровье + лоб", price: "8000 ₽" },
+  { name: "Межбровье + лоб + глаза", price: "10000 ₽" },
+  { name: "Межбровье + лоб + глаза + лифтинг бровей", price: "12000 ₽" },
 ];
 
 const Cosmetology = () => {
@@ -75,6 +82,10 @@ const Cosmetology = () => {
           
           <AnimatedSection delay={0.25}>
             <InteractiveServiceCard title="Липолитики" items={lipolytics} icon={Syringe} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.3}>
+            <InteractiveServiceCard title="Ботокс по зонам" items={botox} icon={Gem} />
           </AnimatedSection>
         </div>
 
