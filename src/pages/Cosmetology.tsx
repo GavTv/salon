@@ -3,7 +3,7 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Sparkles, Droplet, Eye, Syringe, Gem } from "lucide-react";
+import { Sparkles, Droplet, Eye, Syringe, Gem, Scissors } from "lucide-react";
 import { motion } from "framer-motion";
 
 const eyebrows = [
@@ -36,6 +36,21 @@ const botox = [
   { name: "Межбровье + лоб", price: "8000 ₽" },
   { name: "Межбровье + лоб + глаза", price: "10000 ₽" },
   { name: "Межбровье + лоб + глаза + лифтинг бровей", price: "12000 ₽" },
+];
+
+const waxEpilation = [
+  { name: "Усики", price: "200 ₽" },
+  { name: "Нос", price: "200 ₽" },
+  { name: "Губа", price: "200 ₽" },
+  { name: "Подбородок", price: "200 ₽" },
+  { name: "Лицо", price: "500 ₽" },
+  { name: "Подмышки", price: "600 ₽" },
+  { name: "Руки", price: "600 / 1000 ₽" },
+  { name: "Живот", price: "400 ₽" },
+  { name: "Спина", price: "800 ₽" },
+  { name: "Ноги", price: "600 / 1200 ₽" },
+  { name: "Зона бикини", price: "1200 ₽" },
+  { name: "Глубокое бикини", price: "2000 ₽" },
 ];
 
 const Cosmetology = () => {
@@ -86,6 +101,10 @@ const Cosmetology = () => {
           
           <AnimatedSection delay={0.3}>
             <InteractiveServiceCard title="Ботокс по зонам" items={botox} icon={Gem} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.35}>
+            <InteractiveServiceCard title="Восковая эпиляция" items={waxEpilation} icon={Scissors} />
           </AnimatedSection>
         </div>
 
