@@ -3,7 +3,7 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Sparkles, Droplet, Eye } from "lucide-react";
+import { Sparkles, Droplet, Eye, Syringe } from "lucide-react";
 import { motion } from "framer-motion";
 
 const eyebrows = [
@@ -23,6 +23,12 @@ const facePeelings = [
 
 const faceCare = [
   { name: "Уход лица на косметике «Angiopharm»", price: "3000 ₽" },
+];
+
+const lipolytics = [
+  { name: "LiGHT FiT 2 мл", price: "3500 ₽" },
+  { name: "BiOGEL (стройность) 2 мл", price: "12000 ₽" },
+  { name: "LiPO LONG коктейль для тела", price: "15000 ₽" },
 ];
 
 const Cosmetology = () => {
@@ -54,7 +60,7 @@ const Cosmetology = () => {
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <AnimatedSection delay={0.1}>
             <InteractiveServiceCard title="Брови" items={eyebrows} icon={Eye} />
           </AnimatedSection>
@@ -65,6 +71,10 @@ const Cosmetology = () => {
           
           <AnimatedSection delay={0.2}>
             <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Droplet} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.25}>
+            <InteractiveServiceCard title="Липолитики" items={lipolytics} icon={Syringe} />
           </AnimatedSection>
         </div>
 
