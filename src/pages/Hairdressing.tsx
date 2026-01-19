@@ -3,7 +3,7 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Scissors, Palette, Sparkles, Droplet, ChevronDown } from "lucide-react";
+import { Scissors, Palette, Droplet } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   Accordion,
@@ -15,7 +15,7 @@ import {
 // Раздел 1: Стрижки и укладки
 const haircutServices = [
   { name: "Мужские стрижки", price: "от 950 ₽" },
-  { name: "Женские стрижки", price: "от 1200 ₽" },
+  { name: "Женские стрижки", price: "от 1400 ₽" },
   { name: "Укладки волос", price: "от 1500 ₽" },
   { name: "Стрижка челки", price: "от 500 ₽" },
   { name: "Прически/Косы", price: "от 2500 ₽" },
@@ -23,26 +23,20 @@ const haircutServices = [
 
 // Раздел 2: Окрашивание волос
 const coloringServices = [
-  { name: "Окрашивание волос Kapous/Estel", price: "от 2000 ₽" },
-  { name: "Окрашивание волос от Loreal", price: "от 2500 ₽" },
-  { name: "Тонирование", price: "от 1500 ₽" },
-];
-
-// Подраздел: Сложные окрашивания
-const complexColoringServices = [
-  { name: "Корни", price: "от 2000 ₽" },
-  { name: "Полное", price: "от 3500 ₽" },
-  { name: "Блондирование волос", price: "от 2500 ₽" },
+  { name: "Окрашивание волос", price: "от 2000 ₽" },
+  { name: "Тонирование", price: "от 2500 ₽" },
+  { name: "Блондирование", price: "от 2500 ₽" },
+  { name: "Мелирование", price: "от 3500 ₽" },
+  { name: "Сложное окрашивание (ambre, baloyash, airtouch)", price: "от 5500 ₽" },
 ];
 
 // Подраздел: Уход за волосами
 const hairCareServices = [
-  { name: "Абсолютное счастье для волос от Lebel (Япония)", price: "от 2800 ₽" },
-  { name: "Ботокс волос (HONMA TOKIO) Биксипластия волос Nano Brazil", price: "от 3000 ₽" },
-  { name: "Кератиновое выпрямление Nano Brazil / Нанопластика волос (Aegla H2O Zero)", price: "от 3500 ₽" },
-  { name: "Ламинирование Constant Delight", price: "от 2000 ₽" },
-  { name: "Коллаген волос Nano Brazil", price: "от 3000 ₽" },
-  { name: "Olaplex №1 и №2", price: "от 2500 ₽" },
+  { name: "Абсолютное счастье для волос от Lebel (Япония)", price: "от 5000 ₽" },
+  { name: "Ботокс волос (HONMA TOKIO)", price: "от 6500 ₽" },
+  { name: "Кератиновое выпрямление Nano Brazil", price: "от 6500 ₽" },
+  { name: "Ламинирование Constant Delight", price: "от 2500 ₽" },
+  { name: "Коллаген для волос Nano Brazil", price: "от 3000 ₽" },
 ];
 
 const ServiceList = ({ items }: { items: { name: string; price: string }[] }) => (
@@ -125,20 +119,8 @@ const Hairdressing = () => {
               {/* Основные услуги окрашивания */}
               <ServiceList items={coloringServices} />
 
-              {/* Подразделы в аккордеоне */}
+              {/* Подраздел: Уход за волосами */}
               <Accordion type="multiple" className="mt-4">
-                <AccordionItem value="complex" className="border-foreground/10">
-                  <AccordionTrigger className="py-3 text-foreground/90 hover:text-foreground hover:no-underline">
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-primary" />
-                      <span className="font-medium">Сложные окрашивания</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 pb-4">
-                    <ServiceList items={complexColoringServices} />
-                  </AccordionContent>
-                </AccordionItem>
-
                 <AccordionItem value="care" className="border-foreground/10">
                   <AccordionTrigger className="py-3 text-foreground/90 hover:text-foreground hover:no-underline">
                     <div className="flex items-center gap-2">
