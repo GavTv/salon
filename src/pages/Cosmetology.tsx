@@ -3,7 +3,7 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Sparkles, Droplet, Eye, Syringe, Gem, Scissors } from "lucide-react";
+import { Sparkles, Droplet, Eye, Syringe, Gem, Scissors, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const eyebrows = [
@@ -47,6 +47,15 @@ const waxEpilation = [
   { name: "Ноги", price: "600 / 1200 ₽" },
   { name: "Зона бикини", price: "1200 ₽" },
   { name: "Глубокое бикини", price: "2000 ₽" },
+];
+
+const faceCare = [
+  { name: "Узи чистка", price: "от 2500 ₽" },
+  { name: "Комбинированная чистка", price: "от 3500 ₽" },
+  { name: "Аква Пилинг", price: "от 3500 ₽" },
+  { name: "Карбокситерапия", price: "от 3500 ₽" },
+  { name: "Уход лица Angiopharm", price: "3000 ₽" },
+  { name: "Массаж лица", price: "от 2500 ₽" },
 ];
 
 const Cosmetology = () => {
@@ -97,6 +106,10 @@ const Cosmetology = () => {
           
           <AnimatedSection delay={0.35}>
             <InteractiveServiceCard title="Восковая эпиляция" items={waxEpilation} icon={Scissors} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.4}>
+            <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Heart} />
           </AnimatedSection>
         </div>
 
