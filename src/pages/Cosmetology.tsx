@@ -3,53 +3,26 @@ import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import InteractiveServiceCard from "@/components/InteractiveServiceCard";
-import { Sparkles, Droplet, Zap, Eye, Brush, Syringe } from "lucide-react";
+import { Sparkles, Droplet, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 
-const faceCleaning = [
-  { name: "Классическая чистка", price: "от 2500 ₽" },
-  { name: "Ультразвуковая чистка", price: "от 2000 ₽" },
-  { name: "Комбинированная чистка", price: "от 3500 ₽" },
-  { name: "Атравматичная чистка", price: "от 3000 ₽" },
+const eyebrows = [
+  { name: "Коррекция бровей", price: "500 ₽" },
+  { name: "Коррекция бровей (воск)", price: "700 ₽" },
+  { name: "Окрашивание бровей/ресниц (краской)", price: "500 ₽" },
+  { name: "Окрашивание бровей хной", price: "700 ₽" },
+  { name: "Ламинирование бровей", price: "2500 ₽" },
 ];
 
-const injections = [
-  { name: "Ботулинотерапия (зона)", price: "от 5000 ₽" },
-  { name: "Контурная пластика губ", price: "от 12000 ₽" },
-  { name: "Биоревитализация", price: "от 8000 ₽" },
-  { name: "Мезотерапия лица", price: "от 4000 ₽" },
-  { name: "Плазмолифтинг", price: "от 6000 ₽" },
+const facePeelings = [
+  { name: "Миндальный", price: "2000 ₽" },
+  { name: "Кислотный", price: "2500 ₽" },
+  { name: "Джесснер", price: "3000 ₽" },
+  { name: "BioRePeel, PRX", price: "3500 ₽" },
 ];
 
 const faceCare = [
-  { name: "Уходовая процедура", price: "от 2500 ₽" },
-  { name: "Пилинг поверхностный", price: "от 2000 ₽" },
-  { name: "Пилинг срединный", price: "от 4000 ₽" },
-  { name: "Массаж лица", price: "от 1500 ₽" },
-  { name: "Альгинатная маска", price: "от 1000 ₽" },
-];
-
-const apparatus = [
-  { name: "RF-лифтинг", price: "от 3500 ₽" },
-  { name: "Микротоковая терапия", price: "от 2500 ₽" },
-  { name: "Фотоомоложение", price: "от 4000 ₽" },
-  { name: "Лазерное омоложение", price: "от 6000 ₽" },
-  { name: "Криотерапия", price: "от 2000 ₽" },
-];
-
-const eyebrows = [
-  { name: "Коррекция бровей", price: "от 500 ₽" },
-  { name: "Окрашивание бровей", price: "от 600 ₽" },
-  { name: "Ламинирование бровей", price: "от 1500 ₽" },
-  { name: "Ламинирование ресниц", price: "от 2000 ₽" },
-  { name: "Наращивание ресниц", price: "от 2500 ₽" },
-];
-
-const permanent = [
-  { name: "Перманент бровей", price: "от 8000 ₽" },
-  { name: "Перманент губ", price: "от 9000 ₽" },
-  { name: "Перманент век", price: "от 7000 ₽" },
-  { name: "Коррекция перманента", price: "от 4000 ₽" },
+  { name: "Уход лица на косметике «Angiopharm»", price: "3000 ₽" },
 ];
 
 const Cosmetology = () => {
@@ -81,29 +54,17 @@ const Cosmetology = () => {
         </AnimatedSection>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <AnimatedSection delay={0.1}>
-            <InteractiveServiceCard title="Чистка лица" items={faceCleaning} icon={Droplet} />
+            <InteractiveServiceCard title="Брови" items={eyebrows} icon={Eye} />
           </AnimatedSection>
           
           <AnimatedSection delay={0.15}>
-            <InteractiveServiceCard title="Инъекционные процедуры" items={injections} icon={Syringe} />
+            <InteractiveServiceCard title="Пилинги для лица" items={facePeelings} icon={Sparkles} />
           </AnimatedSection>
           
           <AnimatedSection delay={0.2}>
-            <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Sparkles} />
-          </AnimatedSection>
-          
-          <AnimatedSection delay={0.25}>
-            <InteractiveServiceCard title="Аппаратная косметология" items={apparatus} icon={Zap} />
-          </AnimatedSection>
-          
-          <AnimatedSection delay={0.3}>
-            <InteractiveServiceCard title="Брови и ресницы" items={eyebrows} icon={Eye} />
-          </AnimatedSection>
-          
-          <AnimatedSection delay={0.35}>
-            <InteractiveServiceCard title="Перманентный макияж" items={permanent} icon={Brush} />
+            <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Droplet} />
           </AnimatedSection>
         </div>
 
