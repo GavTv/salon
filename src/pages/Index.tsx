@@ -6,11 +6,18 @@ import { Sun, Sparkles, Clock, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
-  { name: "Вертикальный солярий", price: "15 ₽/мин" },
-  { name: "Горизонтальный солярий", price: "12 ₽/мин" },
-  { name: "Абонемент 100 минут", price: "1200 ₽" },
-  { name: "Крем для загара", price: "от 100 ₽" },
+  { name: "Крем для загара", price: "150 ₽" },
+  { name: "Шапочка", price: "20 ₽" },
+  { name: "Очки (наклейки)", price: "20 ₽" },
+  { name: "Вертикальный солярий — UWE PowerDome", price: "20 ₽/мин" },
 ];
+
+const subscription = {
+  minutes: "75 минут",
+  perMinute: "(1 минута)",
+  price: "1500 ₽",
+  pricePerMinute: "(20 руб)",
+};
 
 const features = [
   { icon: Sparkles, title: "Современное оборудование", description: "Новейшие солярии с равномерным загаром" },
@@ -80,19 +87,16 @@ const Index = () => {
           </div>
         </AnimatedSection>
 
-        {/* Services */}
+        {/* Сопутствующие товары */}
         <AnimatedSection delay={0.3} className="max-w-lg mx-auto">
+          <h2 className="font-heading text-xl md:text-2xl text-foreground text-center mb-6">
+            Сопутствующие товары
+          </h2>
           <motion.div 
             className="overflow-hidden rounded-2xl bg-card border border-border/30"
             whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
             transition={{ duration: 0.3 }}
           >
-            {/* Header */}
-            <div className="flex justify-between items-center px-6 py-4 bg-gradient-to-r from-primary/5 to-accent/5 border-b border-border/30">
-              <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Вид услуги</span>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Стоимость</span>
-            </div>
-            
             {/* Rows */}
             <div>
               {services.map((service, index) => (
@@ -116,6 +120,31 @@ const Index = () => {
                   </motion.span>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+        </AnimatedSection>
+
+        {/* Абонемент в солярий */}
+        <AnimatedSection delay={0.4} className="max-w-lg mx-auto mt-12">
+          <h2 className="font-heading text-xl md:text-2xl text-foreground text-center mb-6">
+            Абонемент в солярий
+          </h2>
+          <motion.div 
+            className="overflow-hidden rounded-2xl bg-card border border-border/30 text-center p-6"
+            whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-primary font-semibold text-lg mb-1">
+              {subscription.minutes}
+            </div>
+            <div className="text-primary text-sm mb-3">
+              {subscription.perMinute}
+            </div>
+            <div className="text-foreground font-medium">
+              {subscription.price}
+            </div>
+            <div className="text-muted-foreground text-sm">
+              {subscription.pricePerMinute}
             </div>
           </motion.div>
         </AnimatedSection>
