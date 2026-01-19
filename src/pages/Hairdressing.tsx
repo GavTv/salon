@@ -98,42 +98,25 @@ const Hairdressing = () => {
           </AnimatedSection>
         </div>
 
-        {/* Раздел 2: Окрашивание волос с аккордеоном */}
-        <div className="max-w-2xl mx-auto">
+        {/* Раздел 2: Окрашивание волос */}
+        <div className="max-w-2xl mx-auto mb-8">
           <AnimatedSection delay={0.2}>
-            <motion.div 
-              className="service-card overflow-hidden"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.2 }}
-            >
-              {/* Заголовок раздела */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Palette className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-heading text-xl md:text-2xl text-foreground">
-                  Окрашивание волос
-                </h3>
-              </div>
+            <InteractiveServiceCard 
+              title="Окрашивание волос" 
+              items={coloringServices} 
+              icon={Palette}
+            />
+          </AnimatedSection>
+        </div>
 
-              {/* Основные услуги окрашивания */}
-              <ServiceList items={coloringServices} />
-
-              {/* Подраздел: Уход за волосами */}
-              <Accordion type="multiple" className="mt-4">
-                <AccordionItem value="care" className="border-foreground/10">
-                  <AccordionTrigger className="py-3 text-foreground/90 hover:text-foreground hover:no-underline">
-                    <div className="flex items-center gap-2">
-                      <Droplet className="w-4 h-4 text-primary" />
-                      <span className="font-medium">Уход за волосами</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 pb-4">
-                    <ServiceList items={hairCareServices} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </motion.div>
+        {/* Раздел 3: Уход за волосами */}
+        <div className="max-w-2xl mx-auto">
+          <AnimatedSection delay={0.3}>
+            <InteractiveServiceCard 
+              title="Уход за волосами" 
+              items={hairCareServices} 
+              icon={Droplet}
+            />
           </AnimatedSection>
         </div>
 
