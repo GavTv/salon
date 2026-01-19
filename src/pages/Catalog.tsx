@@ -15,15 +15,15 @@ const Catalog = () => {
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col">
       {/* Background image */}
-      <div 
+      <div
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${landingBg})`,
         }}
       />
-      
+
       {/* Dark overlay */}
-      <div 
+      <div
         className="fixed inset-0 -z-5 pointer-events-none"
         style={{
           background: "rgba(0, 0, 0, 0.3)",
@@ -31,7 +31,7 @@ const Catalog = () => {
       />
 
       {/* Header */}
-      <motion.header 
+      <motion.header
         className="fixed top-0 left-0 w-full h-20 flex items-center justify-center z-50"
         style={{
           background: "rgba(245, 239, 230, 0.7)",
@@ -44,7 +44,7 @@ const Catalog = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <Link 
+        <Link
           to="/"
           className="text-xl md:text-2xl font-medium tracking-[4px] uppercase text-foreground hover:opacity-80 transition-opacity"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -55,7 +55,7 @@ const Catalog = () => {
 
       {/* Menu Card */}
       <main className="flex-1 flex items-center justify-center px-4 py-24">
-        <motion.div 
+        <motion.div
           className="w-full max-w-md text-center px-6 py-8 rounded-2xl"
           style={{
             background: "rgba(245, 239, 230, 0.7)",
@@ -92,7 +92,7 @@ const Catalog = () => {
       </main>
 
       {/* Footer */}
-      <motion.footer 
+      <motion.footer
         className="fixed bottom-0 left-0 w-full py-4 flex items-center justify-center z-50"
         style={{
           background: "rgba(245, 239, 230, 0.7)",
@@ -105,11 +105,8 @@ const Catalog = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <span 
-          className="text-sm text-muted-foreground"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
-          © 2025 NOVOBEAUTY | Все права защищены
+        <span className="text-sm text-muted-foreground" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          © 2026 NOVOBEAUTY | Все права защищены
         </span>
       </motion.footer>
     </div>

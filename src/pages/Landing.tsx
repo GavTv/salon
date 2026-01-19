@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col">
       {/* Background image */}
-      <div 
+      <div
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${landingBg})`,
@@ -14,7 +14,7 @@ const Landing = () => {
       />
 
       {/* Header */}
-      <motion.header 
+      <motion.header
         className="fixed top-0 left-0 w-full h-20 flex items-center justify-center z-50"
         style={{
           background: "rgba(245, 239, 230, 0.7)",
@@ -27,14 +27,12 @@ const Landing = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <span className="text-xl md:text-2xl font-medium tracking-[4px] uppercase text-foreground">
-          NOVOBEAUTY
-        </span>
+        <span className="text-xl md:text-2xl font-medium tracking-[4px] uppercase text-foreground">NOVOBEAUTY</span>
       </motion.header>
 
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 py-24">
-        <motion.div 
+        <motion.div
           className="mx-4 w-full max-w-3xl text-center px-10 py-12 md:px-16 md:py-14 rounded-2xl"
           style={{
             background: "rgba(210, 210, 200, 0.50)",
@@ -44,7 +42,7 @@ const Landing = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
-          <motion.h1 
+          <motion.h1
             className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground font-normal whitespace-nowrap mb-4"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
@@ -53,8 +51,8 @@ const Landing = () => {
           >
             Совершенство в каждой детали
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-foreground/70 text-sm md:text-base mb-10 font-normal"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             initial={{ opacity: 0, y: 20 }}
@@ -64,13 +62,13 @@ const Landing = () => {
             Эксклюзивные косметические решения
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col gap-4 items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <Link 
+            <Link
               to="/catalog"
               className="w-full max-w-xs px-8 py-4 rounded-full text-foreground/80 font-medium uppercase tracking-widest text-sm hover:opacity-80 transition-all duration-300 hover:scale-105"
               style={{
@@ -81,7 +79,7 @@ const Landing = () => {
             >
               Открыть каталог
             </Link>
-            <Link 
+            <Link
               to="/contacts"
               className="w-full max-w-xs px-8 py-4 rounded-full text-foreground/80 font-medium uppercase tracking-widest text-sm hover:opacity-80 transition-all duration-300 hover:scale-105"
               style={{
@@ -97,7 +95,7 @@ const Landing = () => {
       </main>
 
       {/* Footer */}
-      <motion.footer 
+      <motion.footer
         className="fixed bottom-0 left-0 w-full py-4 flex items-center justify-center z-50"
         style={{
           background: "rgba(245, 239, 230, 0.7)",
@@ -110,9 +108,7 @@ const Landing = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <span className="text-sm text-muted-foreground">
-          © 2025 NOVOBEAUTY | Все права защищены
-        </span>
+        <span className="text-sm text-muted-foreground">© 2026 NOVOBEAUTY | Все права защищены</span>
       </motion.footer>
     </div>
   );
