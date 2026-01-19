@@ -14,9 +14,7 @@ const services = [
 
 const subscription = {
   minutes: "75 минут",
-  perMinute: "(1 минута)",
   price: "1500 ₽",
-  pricePerMinute: "(20 руб)",
 };
 
 const features = [
@@ -134,17 +132,11 @@ const Index = () => {
             whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
             transition={{ duration: 0.3 }}
           >
-            <div className="text-primary font-semibold text-lg mb-1">
+            <div className="text-primary font-semibold text-lg mb-2">
               {subscription.minutes}
-            </div>
-            <div className="text-primary text-sm mb-3">
-              {subscription.perMinute}
             </div>
             <div className="text-foreground font-medium">
               {subscription.price}
-            </div>
-            <div className="text-muted-foreground text-sm">
-              {subscription.pricePerMinute}
             </div>
           </motion.div>
         </AnimatedSection>
