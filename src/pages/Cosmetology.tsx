@@ -21,10 +21,6 @@ const facePeelings = [
   { name: "BioRePeel, PRX", price: "3500 ₽" },
 ];
 
-const faceCare = [
-  { name: "Уход лица на косметике «Angiopharm»", price: "3000 ₽" },
-];
-
 const lipolytics = [
   { name: "LiGHT FiT 2 мл", price: "3500 ₽" },
   { name: "BiOGEL (стройность) 2 мл", price: "12000 ₽" },
@@ -92,10 +88,6 @@ const Cosmetology = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={0.2}>
-            <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Droplet} />
-          </AnimatedSection>
-          
-          <AnimatedSection delay={0.25}>
             <InteractiveServiceCard title="Липолитики" items={lipolytics} icon={Syringe} />
           </AnimatedSection>
           
