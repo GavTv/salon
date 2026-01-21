@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
-import { Gift, ArrowRight } from "lucide-react";
+import { Gift } from "lucide-react";
 import { motion } from "framer-motion";
 
 const promotions = [
@@ -99,17 +99,9 @@ const Promotions = () => {
                   <h3 className="font-heading text-xl text-foreground mb-2 group-hover:text-primary transition-colors">
                     {promo.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {promo.description}
                   </p>
-                  
-                  <motion.div 
-                    className="flex items-center gap-2 text-sm font-medium text-primary"
-                    whileHover={{ x: 4 }}
-                  >
-                    Подробнее
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.div>
                 </div>
                 
                 {/* Hover gradient */}
