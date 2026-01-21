@@ -14,10 +14,10 @@ const promotions = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=450&fit=crop",
-    title: "Скидка 20% на окрашивание",
-    description: "При записи в будние дни с 10:00 до 14:00 действует скидка на все виды окрашивания волос.",
-    badge: "Популярное",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=450&fit=crop",
+    title: "Чистка лица + пилинг в подарок",
+    description: "Чистка лица за 3500 ₽ — пилинг стоимостью 2000 ₽ в подарок!",
+    badge: "Подарок",
   },
   {
     id: 3,
