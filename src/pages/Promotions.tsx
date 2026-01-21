@@ -7,31 +7,31 @@ import { motion } from "framer-motion";
 const promotions = [
   {
     id: 1,
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=450&fit=crop",
+    title: "LPG массаж всего тела",
+    description: "30 мин — 1000 ₽ | 45 мин — 1500 ₽. Эффективная коррекция фигуры и борьба с целлюлитом по специальной цене!",
+    badge: "Выгодно",
+  },
+  {
+    id: 2,
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=450&fit=crop",
     title: "Скидка 20% на окрашивание",
     description: "При записи в будние дни с 10:00 до 14:00 действует скидка на все виды окрашивания волос.",
     badge: "Популярное",
   },
   {
-    id: 2,
-    image: "https://images.unsplash.com/photo-570172619644-dfd03ed5d881?w=600&h=450&fit=crop",
+    id: 3,
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=450&fit=crop",
     title: "Бесплатная консультация косметолога",
     description: "Запишитесь на бесплатную консультацию и получите индивидуальную программу ухода.",
     badge: "Бесплатно",
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&h=450&fit=crop",
-    title: "Абонемент на солярий",
-    description: "При покупке абонемента на 100 минут — крем для загара в подарок.",
-    badge: "Подарок",
   },
   {
     id: 4,
     image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=450&fit=crop",
     title: "LPG массаж: 5+1",
     description: "При покупке курса из 5 процедур LPG массажа — шестая процедура бесплатно.",
-    badge: "Выгодно",
+    badge: "Подарок",
   },
 ];
 
