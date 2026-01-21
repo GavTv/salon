@@ -7,31 +7,31 @@ import { motion } from "framer-motion";
 const promotions = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=450&fit=crop",
-    title: "LPG массаж всего тела",
-    description: "30 мин — 1000 ₽ | 45 мин — 1500 ₽. Эффективная коррекция фигуры и борьба с целлюлитом по специальной цене!",
-    badge: "Выгодно",
-  },
-  {
-    id: 2,
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=450&fit=crop",
     title: "Чистка лица + пилинг в подарок",
     description: "Чистка лица за 3500 ₽ — пилинг стоимостью 2000 ₽ в подарок!",
     badge: "Подарок",
   },
   {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=450&fit=crop",
+    title: "LPG массаж 30 мин",
+    description: "Всего 1000 ₽ вместо 1500 ₽! Эффективная коррекция фигуры по специальной цене.",
+    badge: "Выгодно",
+  },
+  {
     id: 3,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=450&fit=crop",
-    title: "Бесплатная консультация косметолога",
-    description: "Запишитесь на бесплатную консультацию и получите индивидуальную программу ухода.",
-    badge: "Бесплатно",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=450&fit=crop",
+    title: "Ламинирование бровей + архитектура",
+    description: "Ламинирование бровей 2500 ₽ — архитектура бровей (1000 ₽) в подарок!",
+    badge: "Подарок",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=450&fit=crop",
-    title: "LPG массаж: 5+1",
-    description: "При покупке курса из 5 процедур LPG массажа — шестая процедура бесплатно.",
-    badge: "Подарок",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=450&fit=crop",
+    title: "Акция для студентов — скидка 15%",
+    description: "Коррекция бровей 500 ₽ • Окрашивание бровей 500 ₽ • Ламинирование бровей 2500 ₽ • Стрижка волос от 1400 ₽",
+    badge: "Студентам",
   },
 ];
 
