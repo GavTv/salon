@@ -9,13 +9,13 @@ const services = [
   { name: "Крем для загара", price: "150 ₽" },
   { name: "Шапочка", price: "20 ₽" },
   { name: "Очки (наклейки)", price: "20 ₽" },
-  { name: "Вертикальный солярий — UWE PowerDome", price: "20 ₽/мин" },
+  { name: "Вертикальный солярий — UWE PowerDome", price: "50 ₽/мин" },
 ];
 
-const subscription = {
-  minutes: "75 минут",
-  price: "1500 ₽",
-};
+const subscriptions = [
+  { minutes: "50 минут", price: "1500 ₽" },
+  { minutes: "100 минут", price: "2000 ₽" },
+];
 
 const features = [
   { icon: Sparkles, title: "Современное оборудование", description: "Новейшие солярии с равномерным загаром" },
@@ -128,17 +128,35 @@ const Index = () => {
             Абонемент в солярий
           </h2>
           <motion.div 
-            className="overflow-hidden rounded-2xl bg-card border border-border/30 text-center p-6"
+            className="overflow-hidden rounded-2xl bg-card border border-border/30"
             whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
             transition={{ duration: 0.3 }}
           >
-            <div className="text-primary font-semibold text-lg mb-2">
-              {subscription.minutes}
-            </div>
-            <div className="text-foreground font-medium">
-              {subscription.price}
-            </div>
+            {subscriptions.map((sub, index) => (
+              <motion.div
+                key={sub.minutes}
+                className="flex justify-between items-center px-6 py-5 border-b border-border/20 last:border-0 group cursor-default"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                whileHover={{ backgroundColor: "hsl(var(--accent) / 0.3)" }}
+              >
+                <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                  {sub.minutes}
+                </span>
+                <motion.span 
+                  className="text-primary font-semibold text-right"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {sub.price}
+                </motion.span>
+              </motion.div>
+            ))}
           </motion.div>
+          <p className="text-sm text-muted-foreground text-center mt-3">
+            Срок действия абонемента — 1 месяц
+          </p>
         </AnimatedSection>
 
         {/* Info */}
