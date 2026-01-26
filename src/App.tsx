@@ -11,6 +11,7 @@ import Cosmetology from "./pages/Cosmetology";
 import LPGMassage from "./pages/LPGMassage";
 import Promotions from "./pages/Promotions";
 import Contacts from "./pages/Contacts";
+import Prices from "./pages/Prices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/cosmetology" element={<Cosmetology />} />
           <Route path="/lpg-massage" element={<LPGMassage />} />
           <Route path="/promotions" element={<Promotions />} />
+          <Route path="/prices" element={<Prices />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
