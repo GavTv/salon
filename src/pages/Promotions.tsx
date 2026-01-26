@@ -4,31 +4,36 @@ import HeroIcon from "@/components/HeroIcon";
 import { Gift } from "lucide-react";
 import { motion } from "framer-motion";
 
+import promoFaceCleaning from "@/assets/promo-face-cleaning.png";
+import promoLpg from "@/assets/promo-lpg.png";
+import promoBrows from "@/assets/promo-brows.png";
+import promoStudents from "@/assets/promo-students.png";
+
 const promotions = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=450&fit=crop",
+    image: promoFaceCleaning,
     title: "Чистка лица + пилинг в подарок",
     description: "Чистка лица за 3500 ₽ — пилинг стоимостью 2000 ₽ в подарок!",
     badge: "Подарок",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=450&fit=crop",
+    image: promoLpg,
     title: "LPG массаж 30 мин",
     description: "Всего 1000 ₽ вместо 1500 ₽! Эффективная коррекция фигуры по специальной цене.",
     badge: "Выгодно",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=450&fit=crop",
+    image: promoBrows,
     title: "Ламинирование бровей",
     description: "Всего 2000 ₽ вместо 2500 ₽! Идеальные брови по выгодной цене.",
     badge: "Скидка",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=450&fit=crop",
+    image: promoStudents,
     title: "Акция для студентов — скидка 15%",
     description: "Коррекция бровей 500 ₽ • Окрашивание бровей 500 ₽ • Ламинирование бровей 2500 ₽ • Стрижка волос от 1400 ₽",
     badge: "Студентам",
