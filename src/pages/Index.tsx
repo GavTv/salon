@@ -13,6 +13,7 @@ const services = [
 ];
 
 const subscriptions = [
+  { minutes: "1 минута", price: "50 ₽" },
   { minutes: "50 минут", price: "1500 ₽" },
   { minutes: "100 минут", price: "2000 ₽" },
 ];
