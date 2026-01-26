@@ -9,7 +9,7 @@ const services = [
   { name: "Крем для загара", price: "150 ₽" },
   { name: "Шапочка", price: "20 ₽" },
   { name: "Очки (наклейки)", price: "20 ₽" },
-  { name: "Вертикальный солярий — UWE PowerDome", price: "50 ₽/мин" },
+  { name: "Вертикальный солярий — 1 мин", price: "50 ₽" },
 ];
 
 const subscriptions = [
