@@ -62,6 +62,7 @@ const bodyServices = [
 const packages = [
   { name: "5 LPG + 5 RF на пробл. зоны или 5 кавитаций", price: "10000 ₽" },
   { name: "10 сеансов LPG тело 45 минут", price: "15000 ₽" },
+  { name: "10 сеансов LPG тела (30 мин)", price: "10000 ₽" },
   { name: "5 сеансов LPG + Кавитация 45 минут", price: "20000 ₽" },
 ];
 
