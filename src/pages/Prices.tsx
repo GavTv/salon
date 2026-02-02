@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
-import { Sun, Scissors, Palette, Droplet, Sparkles, Eye, Syringe, Gem, Heart, Zap } from "lucide-react";
+import { Sun, Scissors, Palette, Droplet, Sparkles, Eye, Heart, Zap } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ServiceItem {
@@ -107,18 +107,6 @@ const facePeelings = [
   { name: "BioRePeel, PRX", price: "3500 ₽" },
 ];
 
-const lipolytics = [
-  { name: "LiGHT FiT 2 мл", price: "3500 ₽" },
-  { name: "BiOGEL (стройность) 2 мл", price: "12000 ₽" },
-  { name: "LiPO LONG коктейль для тела", price: "15000 ₽" },
-];
-
-const botox = [
-  { name: "ONE TOX (1 ед.)", price: "300 ₽" },
-  { name: "Межбровье + лоб", price: "8000 ₽" },
-  { name: "Межбровье + лоб + глаза", price: "10000 ₽" },
-  { name: "Межбровье + лоб + глаза + лифтинг бровей", price: "12000 ₽" },
-];
 
 const waxEpilation = [
   { name: "Усики", price: "200 ₽" },
@@ -226,10 +214,6 @@ const Prices = () => {
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <PriceSection title="Брови" items={eyebrows} icon={Eye} />
             <PriceSection title="Пилинги для лица" items={facePeelings} icon={Sparkles} />
-          </div>
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
-            <PriceSection title="Липолитики" items={lipolytics} icon={Syringe} />
-            <PriceSection title="Ботокс по зонам" items={botox} icon={Gem} />
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <PriceSection title="Восковая эпиляция" items={waxEpilation} icon={Scissors} />
