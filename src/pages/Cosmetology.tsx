@@ -1,0 +1,112 @@
+import Layout from "@/components/Layout";
+import BookButton from "@/components/BookButton";
+import AnimatedSection from "@/components/AnimatedSection";
+import HeroIcon from "@/components/HeroIcon";
+import InteractiveServiceCard from "@/components/InteractiveServiceCard";
+import { Sparkles, Eye, Scissors, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+
+const eyebrows = [
+  { name: "Коррекция бровей", price: "500 ₽" },
+  { name: "Коррекция бровей (воск)", price: "700 ₽" },
+  { name: "Окрашивание бровей/ресниц (краской)", price: "500 ₽" },
+  { name: "Окрашивание бровей хной", price: "700 ₽" },
+  { name: "Ламинирование бровей", price: "2500 ₽" },
+];
+
+const facePeelings = [
+  { name: "Миндальный", price: "2000 ₽" },
+  { name: "Кислотный", price: "2500 ₽" },
+  { name: "Джесснер", price: "3000 ₽" },
+  { name: "BioRePeel, PRX", price: "3500 ₽" },
+];
+
+
+const waxEpilation = [
+  { name: "Усики", price: "200 ₽" },
+  { name: "Нос", price: "200 ₽" },
+  { name: "Губа", price: "200 ₽" },
+  { name: "Подбородок", price: "200 ₽" },
+  { name: "Лицо", price: "500 ₽" },
+  { name: "Подмышки", price: "600 ₽" },
+  { name: "Руки", price: "600 / 1000 ₽" },
+  { name: "Живот", price: "400 ₽" },
+  { name: "Спина", price: "800 ₽" },
+  { name: "Ноги", price: "600 / 1200 ₽" },
+  { name: "Зона бикини", price: "1200 ₽" },
+  { name: "Глубокое бикини", price: "2000 ₽" },
+];
+
+const faceCare = [
+  { name: "Узи чистка", price: "от 2500 ₽" },
+  { name: "Комбинированная чистка", price: "от 3500 ₽" },
+  { name: "Механическая чистка", price: "4000 ₽" },
+  { name: "Аква Пилинг", price: "от 3500 ₽" },
+  { name: "Карбокситерапия", price: "от 3500 ₽" },
+  { name: "Уход лица Angiopharm", price: "3500 ₽" },
+  { name: "Уход для ULTRACEUTICALS", price: "5500 ₽" },
+  { name: "Массаж лица", price: "от 2500 ₽" },
+];
+
+const Cosmetology = () => {
+  return (
+    <Layout>
+      <div className="container py-12 md:py-20">
+        {/* Hero */}
+        <AnimatedSection className="max-w-2xl mx-auto text-center mb-12">
+          <HeroIcon icon={Sparkles} />
+          
+          <motion.h1 
+            className="section-title mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Косметология
+          </motion.h1>
+          
+          <motion.p 
+            className="text-muted-foreground leading-relaxed text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            Современные косметологические процедуры для красоты и здоровья вашей кожи. 
+            Индивидуальный подход и профессиональный уход.
+          </motion.p>
+        </AnimatedSection>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <AnimatedSection delay={0.1}>
+            <InteractiveServiceCard title="Брови" items={eyebrows} icon={Eye} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.15}>
+            <InteractiveServiceCard title="Пилинги для лица" items={facePeelings} icon={Sparkles} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.2}>
+            <InteractiveServiceCard title="Восковая эпиляция" items={waxEpilation} icon={Scissors} />
+          </AnimatedSection>
+          
+          <AnimatedSection delay={0.25}>
+            <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Heart} />
+          </AnimatedSection>
+        </div>
+
+        {/* Info */}
+        <AnimatedSection delay={0.4} className="max-w-2xl mx-auto mt-12 text-center">
+          <p className="text-sm text-muted-foreground bg-secondary/30 rounded-xl p-4 border border-border/20 mb-8">
+            ⚕️ Перед процедурами необходима консультация косметолога. 
+            Все процедуры выполняются сертифицированными специалистами с использованием 
+            качественных препаратов.
+          </p>
+          <BookButton />
+        </AnimatedSection>
+      </div>
+    </Layout>
+  );
+};
+
+export default Cosmetology;

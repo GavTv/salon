@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Warm cream/beige palette for beauty salon */
+    --background: 30 33% 97%;
+    --foreground: 25 20% 20%;
+
+    --card: 30 30% 98%;
+    --card-foreground: 25 20% 20%;
+
+    --popover: 30 30% 98%;
+    --popover-foreground: 25 20% 20%;
+
+    /* Soft rose accent */
+    --primary: 12 45% 65%;
+    --primary-foreground: 30 33% 97%;
+
+    --secondary: 30 25% 93%;
+    --secondary-foreground: 25 20% 25%;
+
+    --muted: 30 20% 94%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 30 25% 90%;
+    --accent-foreground: 25 20% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 12 45% 65%;
+
+    --radius: 0.5rem;
+
+    /* Custom salon colors */
+    --cream: 30 33% 93%;
+    --cream-transparent: 30 33% 93% / 0.8;
+    --warm-white: 30 30% 98%;
+    --soft-brown: 25 20% 35%;
+    --rose: 12 50% 60%;
+    --rose-hover: 12 55% 50%;
+    
+    /* Fresh accent colors */
+    --coral: 16 85% 65%;
+    --peach: 25 90% 75%;
+    --gold: 40 70% 55%;
+
+    /* Typography */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 20% 10%;
+    --foreground: 30 30% 95%;
+    --card: 25 20% 12%;
+    --card-foreground: 30 30% 95%;
+    --popover: 25 20% 12%;
+    --popover-foreground: 30 30% 95%;
+    --primary: 12 45% 65%;
+    --primary-foreground: 25 20% 10%;
+    --secondary: 25 15% 20%;
+    --secondary-foreground: 30 30% 95%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 30 20% 60%;
+    --accent: 25 15% 20%;
+    --accent-foreground: 30 30% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 12 45% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply font-medium tracking-wide;
+  }
+}
+
+@layer components {
+  .nav-transparent {
+    background-color: hsl(var(--cream-transparent));
+    backdrop-filter: blur(8px);
+  }
+
+  /* Solid background for full-screen mobile navigation */
+  .mobile-menu-overlay {
+    background-color: hsl(var(--background)) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .footer-bg {
+    background-color: hsl(var(--cream-transparent));
+  }
+
+  .btn-book {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium transition-all duration-300 rounded-xl relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--rose)) 0%, hsl(var(--coral)) 100%);
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 4px 20px -4px hsl(var(--rose) / 0.4);
+  }
+
+  .btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px -4px hsl(var(--rose) / 0.5);
+  }
+
+  .btn-book:active {
+    transform: translateY(0);
+  }
+
+  .service-card {
+    @apply p-6 rounded-2xl transition-all duration-300 border border-border/30;
+    background: linear-gradient(145deg, hsl(var(--warm-white)) 0%, hsl(var(--card)) 100%);
+  }
+
+  .service-card:hover {
+    box-shadow: 0 8px 30px -8px hsl(var(--soft-brown) / 0.15);
+    border-color: hsl(var(--primary) / 0.2);
+  }
+
+  .promo-card {
+    @apply overflow-hidden rounded-lg;
+    background-color: hsl(var(--warm-white));
+    box-shadow: 0 2px 12px -2px hsl(var(--soft-brown) / 0.08);
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    @apply text-3xl md:text-4xl font-medium text-foreground mb-8;
+  }
+
+  .price-tag {
+    @apply text-primary font-medium;
+  }
+}
