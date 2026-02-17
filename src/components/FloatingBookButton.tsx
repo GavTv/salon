@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, CalendarIcon } from "lucide-react";
 
 interface FloatingBookButtonProps {
   className?: string;
@@ -12,13 +12,14 @@ const services = [
   "Парикмахерские услуги",
   "Косметология",
   "LPG",
-  "Цены",
 ];
 
 const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
+  const [date, setDate] = useState("");
 
   const sizeClasses = {
     sm: "w-24 h-24 text-xs",
@@ -90,15 +91,42 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
               ))}
             </div>
 
+            {/* Phone */}
+            <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Телефон"
+              type="tel"
+              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            />
+
+            {/* Date */}
+            <input
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              type="date"
+              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            />
+
             {/* Comment */}
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder="Комментарий..."
-              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+              placeholder="Укажите ваш комментарий"
+              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none mb-3"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
               rows={2}
             />
+
+            {/* Note */}
+            <p
+              className="text-[11px] text-foreground/50 leading-snug"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              * Мы сразу с вами свяжемся в отношении свободного времени в выбранный вами день.
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
