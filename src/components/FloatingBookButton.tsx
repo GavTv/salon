@@ -127,6 +127,16 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
             >
               * Мы сразу с вами свяжемся в отношении свободного времени в выбранный вами день.
             </p>
+
+            <p
+              className="text-[9px] text-foreground/35 leading-snug mt-1"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Отправляя данную заявку, вы соглашаетесь с{" "}
+              <a href="/privacy-policy" className="underline hover:text-foreground/50 transition-colors">
+                политикой конфиденциальности
+              </a>.
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
