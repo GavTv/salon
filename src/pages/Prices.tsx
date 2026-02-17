@@ -55,7 +55,7 @@ const PriceSection = ({ title, items, icon: Icon }: PriceSectionProps) => (
 
 // ========== СОЛЯРИЙ ==========
 const solariumAccessories = [
-  { name: "Крем для загара", price: "150 ₽" },
+  { name: "Крем для загара", price: "200 ₽" },
   { name: "Шапочка", price: "20 ₽" },
   { name: "Очки (наклейки)", price: "20 ₽" },
 ];
