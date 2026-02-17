@@ -1,4 +1,5 @@
 import { Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -66,10 +67,19 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-6 pt-6 border-t border-border/50 text-center">
+        <div className="mt-6 pt-6 border-t border-border/50 text-center space-y-2">
           <p className="text-xs text-muted-foreground">
             © {currentYear} Novobeauty. Все права защищены.
           </p>
+          <div className="flex items-center justify-center gap-4">
+            <Link to="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              Политика конфиденциальности
+            </Link>
+            <span className="text-muted-foreground/40">|</span>
+            <Link to="/consent" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              Согласие на обработку ПД
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
