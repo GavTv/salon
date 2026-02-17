@@ -22,7 +22,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { service, phone, date, comment } = await req.json();
+    const { service, name, phone, date, comment } = await req.json();
 
     if (!service || !phone || !date) {
       return new Response(
@@ -31,7 +31,7 @@ Deno.serve(async (req) => {
       );
     }
 
-    const messageText = `📋 Новая заявка!\n\n🔹 Услуга: ${service}\n📞 Телефон: ${phone}\n📅 Дата: ${date}\n💬 Комментарий: ${comment || "Нет"}`;
+    const messageText = `📋 Новая заявка!\n\n🔹 Услуга: ${service}\n👤 Имя: ${name || "Не указано"}\n📞 Телефон: ${phone}\n📅 Дата: ${date}\n💬 Комментарий: ${comment || "Нет"}`;
 
     const response = await fetch(TELEGRAM_API_URL, {
       method: "POST",
