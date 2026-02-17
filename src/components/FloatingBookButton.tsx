@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, CalendarIcon } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { format } from "date-fns";
+import { ru } from "date-fns/locale";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 interface FloatingBookButtonProps {
   className?: string;
@@ -20,8 +25,9 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<Date | undefined>(undefined);
   const [sending, setSending] = useState(false);
 
   const sizeClasses = {
@@ -94,12 +100,21 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
               ))}
             </div>
 
+            {/* Name */}
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Ваше имя"
+              type="text"
+              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            />
+
             {/* Phone */}
             <input
               value={phone}
               onChange={(e) => {
                 const raw = e.target.value.replace(/\D/g, "");
-                // Always start with 7
                 const digits = raw.startsWith("7") ? raw.slice(1) : raw.replace(/^8/, "");
                 const d = digits.slice(0, 10);
                 let formatted = "+7";
@@ -115,14 +130,32 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             />
 
-            {/* Date */}
-            <input
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              type="date"
-              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2 cursor-pointer"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            />
+            {/* Date - Shadcn Popover + Calendar */}
+            <Popover>
+              <PopoverTrigger asChild>
+                <button
+                  type="button"
+                  className={cn(
+                    "w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-left focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2 cursor-pointer flex items-center gap-2",
+                    !date && "text-foreground/40"
+                  )}
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  <CalendarIcon size={16} className="shrink-0 opacity-60" />
+                  {date ? format(date, "d MMMM yyyy", { locale: ru }) : "Выберите дату"}
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0 z-[60]" align="start">
+                <Calendar
+                  mode="single"
+                  selected={date}
+                  onSelect={setDate}
+                  initialFocus
+                  className={cn("p-3 pointer-events-auto")}
+                  disabled={(d) => d < new Date(new Date().setHours(0,0,0,0))}
+                />
+              </PopoverContent>
+            </Popover>
 
             {/* Comment */}
             <textarea
@@ -156,18 +189,20 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
             <button
               className="w-full mt-3 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md hover:opacity-90 transition-opacity disabled:opacity-50"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
-              disabled={!selected || phone.replace(/\D/g, "").length !== 11 || !date || sending}
+              disabled={!selected || phone.replace(/\D/g, "").length !== 11 || !date || !name.trim() || sending}
               onClick={async () => {
                 setSending(true);
                 try {
+                  const formattedDate = date ? format(date, "d MMMM yyyy", { locale: ru }) : "";
                   const { data, error } = await supabase.functions.invoke("telegram-bot", {
-                    body: { service: selected, phone, date, comment },
+                    body: { service: selected, name: name.trim(), phone, date: formattedDate, comment },
                   });
                   if (error) throw error;
                   toast.success("Заявка отправлена! Мы скоро свяжемся с вами.");
                   setSelected(null);
+                  setName("");
                   setPhone("");
-                  setDate("");
+                  setDate(undefined);
                   setComment("");
                   setIsOpen(false);
                 } catch (err) {
