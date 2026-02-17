@@ -5,16 +5,19 @@ import HeroIcon from "@/components/HeroIcon";
 import { Sun, Sparkles, Clock, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
-const services = [
-  { name: "Крем для загара", price: "150 ₽" },
-  { name: "Шапочка", price: "20 ₽" },
-  { name: "Очки (наклейки)", price: "20 ₽" },
+const mainPrice = [
+  { name: "1 минута", price: "50 ₽" },
 ];
 
 const subscriptions = [
-  { minutes: "1 минута", price: "50 ₽" },
-  { minutes: "50 минут", price: "1500 ₽" },
-  { minutes: "100 минут", price: "2000 ₽" },
+  { name: "50 минут", price: "1500 ₽" },
+  { name: "100 минут", price: "2500 ₽" },
+];
+
+const accessories = [
+  { name: "Крем для загара", price: "150 ₽" },
+  { name: "Шапочка", price: "20 ₽" },
+  { name: "Очки (наклейки)", price: "20 ₽" },
 ];
 
 const features = [
@@ -85,47 +88,41 @@ const Index = () => {
           </div>
         </AnimatedSection>
 
-        {/* Сопутствующие товары */}
+        {/* Солярий — основная цена */}
         <AnimatedSection delay={0.3} className="max-w-lg mx-auto">
           <h2 className="font-heading text-xl md:text-2xl text-foreground text-center mb-6">
-            Сопутствующие товары
+            Солярий
           </h2>
           <motion.div 
             className="overflow-hidden rounded-2xl bg-card border border-border/30"
             whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
             transition={{ duration: 0.3 }}
           >
-            {/* Rows */}
-            <div>
-              {services.map((service, index) => (
-                <motion.div
-                  key={service.name}
-                  className="flex justify-between items-center px-6 py-5 border-b border-border/20 last:border-0 group cursor-default"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
-                  whileHover={{ backgroundColor: "hsl(var(--accent) / 0.3)" }}
-                >
-                  <span className="text-foreground font-medium group-hover:text-primary transition-colors">
-                    {service.name}
-                  </span>
-                  <motion.span 
-                    className="text-primary font-semibold text-right"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {service.price}
-                  </motion.span>
-                </motion.div>
-              ))}
-            </div>
+            {mainPrice.map((item, index) => (
+              <motion.div
+                key={item.name}
+                className="flex justify-between items-center px-6 py-5 group cursor-default"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                whileHover={{ backgroundColor: "hsl(var(--accent) / 0.3)" }}
+              >
+                <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                  {item.name}
+                </span>
+                <motion.span className="text-primary font-semibold text-right" whileHover={{ scale: 1.05 }}>
+                  {item.price}
+                </motion.span>
+              </motion.div>
+            ))}
           </motion.div>
         </AnimatedSection>
 
-        {/* Абонемент в солярий */}
+        {/* Абонементы */}
         <AnimatedSection delay={0.4} className="max-w-lg mx-auto mt-12">
           <h2 className="font-heading text-xl md:text-2xl text-foreground text-center mb-6">
-            Абонемент в солярий
+            Абонементы
           </h2>
           <motion.div 
             className="overflow-hidden rounded-2xl bg-card border border-border/30"
@@ -134,7 +131,7 @@ const Index = () => {
           >
             {subscriptions.map((sub, index) => (
               <motion.div
-                key={sub.minutes}
+                key={sub.name}
                 className="flex justify-between items-center px-6 py-5 border-b border-border/20 last:border-0 group cursor-default"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -143,12 +140,9 @@ const Index = () => {
                 whileHover={{ backgroundColor: "hsl(var(--accent) / 0.3)" }}
               >
                 <span className="text-foreground font-medium group-hover:text-primary transition-colors">
-                  {sub.minutes}
+                  {sub.name}
                 </span>
-                <motion.span 
-                  className="text-primary font-semibold text-right"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <motion.span className="text-primary font-semibold text-right" whileHover={{ scale: 1.05 }}>
                   {sub.price}
                 </motion.span>
               </motion.div>
@@ -157,6 +151,37 @@ const Index = () => {
           <p className="text-sm text-muted-foreground text-center mt-3">
             Срок действия абонемента — 1 месяц
           </p>
+        </AnimatedSection>
+
+        {/* Сопутствующие товары */}
+        <AnimatedSection delay={0.5} className="max-w-lg mx-auto mt-12">
+          <h2 className="font-heading text-xl md:text-2xl text-foreground text-center mb-6">
+            Сопутствующие товары
+          </h2>
+          <motion.div 
+            className="overflow-hidden rounded-2xl bg-card border border-border/30"
+            whileHover={{ boxShadow: "0 12px 40px -12px hsl(var(--soft-brown) / 0.2)" }}
+            transition={{ duration: 0.3 }}
+          >
+            {accessories.map((item, index) => (
+              <motion.div
+                key={item.name}
+                className="flex justify-between items-center px-6 py-5 border-b border-border/20 last:border-0 group cursor-default"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                whileHover={{ backgroundColor: "hsl(var(--accent) / 0.3)" }}
+              >
+                <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                  {item.name}
+                </span>
+                <motion.span className="text-primary font-semibold text-right" whileHover={{ scale: 1.05 }}>
+                  {item.price}
+                </motion.span>
+              </motion.div>
+            ))}
+          </motion.div>
         </AnimatedSection>
 
         {/* Info */}

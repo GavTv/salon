@@ -63,7 +63,7 @@ const solariumAccessories = [
 const solariumSubscriptions = [
   { name: "1 минута", price: "50 ₽" },
   { name: "50 минут", price: "1500 ₽" },
-  { name: "100 минут", price: "2000 ₽" },
+  { name: "100 минут", price: "2500 ₽" },
 ];
 
 // ========== ПАРИКМАХЕРСКИЕ УСЛУГИ ==========
