@@ -83,6 +83,12 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
             </h3>
 
             {/* Services */}
+            <p
+              className="text-xs text-foreground/50 mb-1.5 tracking-wider uppercase"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              Выберите направление
+            </p>
             <div className="flex flex-col gap-1.5 mb-4">
               {services.map((service) => (
                 <button
