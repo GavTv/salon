@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CalendarIcon } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 interface FloatingBookButtonProps {
   className?: string;
@@ -20,6 +22,7 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
   const [date, setDate] = useState("");
+  const [sending, setSending] = useState(false);
 
   const sizeClasses = {
     sm: "w-24 h-24 text-xs",
@@ -140,14 +143,31 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
 
             {/* Submit button */}
             <button
-              className="w-full mt-3 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md hover:opacity-90 transition-opacity"
+              className="w-full mt-3 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md hover:opacity-90 transition-opacity disabled:opacity-50"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
-              onClick={() => {
-                // TODO: handle submit
-                setIsOpen(false);
+              disabled={!selected || !phone || !date || sending}
+              onClick={async () => {
+                setSending(true);
+                try {
+                  const { data, error } = await supabase.functions.invoke("telegram-bot", {
+                    body: { service: selected, phone, date, comment },
+                  });
+                  if (error) throw error;
+                  toast.success("Заявка отправлена! Мы скоро свяжемся с вами.");
+                  setSelected(null);
+                  setPhone("");
+                  setDate("");
+                  setComment("");
+                  setIsOpen(false);
+                } catch (err) {
+                  console.error(err);
+                  toast.error("Ошибка при отправке. Попробуйте позже.");
+                } finally {
+                  setSending(false);
+                }
               }}
             >
-              Отправить
+              {sending ? "Отправка..." : "Отправить"}
             </button>
           </motion.div>
         )}
