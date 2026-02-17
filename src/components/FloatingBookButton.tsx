@@ -55,7 +55,7 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-44 right-6 z-50 w-72 rounded-2xl p-5"
+            className="fixed inset-x-4 bottom-4 top-auto z-50 max-h-[85vh] overflow-y-auto rounded-2xl p-5 sm:inset-auto sm:bottom-44 sm:right-6 sm:w-72 sm:max-h-[80vh]"
             style={{
               background: "rgba(245, 239, 230, 0.92)",
               backdropFilter: "blur(16px)",
