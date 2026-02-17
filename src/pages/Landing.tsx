@@ -108,7 +108,18 @@ const Landing = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <span className="text-sm text-muted-foreground">© 2026 NOVOBEAUTY | Все права защищены</span>
+        <div className="flex flex-col items-center gap-1">
+          <span className="text-sm text-muted-foreground">© 2026 NOVOBEAUTY | Все права защищены</span>
+          <div className="flex items-center gap-3">
+            <Link to="/privacy-policy" className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors">
+              Политика конфиденциальности
+            </Link>
+            <span className="text-muted-foreground/30">|</span>
+            <Link to="/consent" className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors">
+              Согласие на обработку ПД
+            </Link>
+          </div>
+        </div>
       </motion.footer>
     </div>
   );
