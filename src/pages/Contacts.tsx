@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import BookButton from "@/components/BookButton";
 import AnimatedSection from "@/components/AnimatedSection";
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
 const contactInfo = [
@@ -39,13 +39,8 @@ const socialLinks = [
   },
   {
     name: "Telegram",
-    href: "https://t.me/+79850534761",
+    href: "https://t.me/Novobeauty",
     icon: Send,
-  },
-  {
-    name: "WhatsApp",
-    href: "https://wa.me/79850534761",
-    icon: MessageCircle,
   },
 ];
 

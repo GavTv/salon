@@ -5,7 +5,7 @@ interface BookButtonProps {
 const BookButton = ({ className = "" }: BookButtonProps) => {
   return (
     <a
-      href="https://wa.me/79850534761?text=Здравствуйте! Хочу записаться на приём."
+      href="https://t.me/Novobeauty"
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-book ${className}`}
