@@ -97,21 +97,38 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
             {/* Phone */}
             <input
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="Телефон"
+              onChange={(e) => {
+                let val = e.target.value;
+                // Keep +7 prefix
+                if (!val.startsWith("+7")) val = "+7";
+                // Only allow digits after +7, max 10 digits
+                const digits = val.slice(2).replace(/\D/g, "").slice(0, 10);
+                setPhone("+7" + digits);
+              }}
+              placeholder="+7XXXXXXXXXX"
               type="tel"
               className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             />
 
             {/* Date */}
-            <input
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              type="date"
-              className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-2"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            />
+            <div
+              className="relative w-full mb-2 cursor-pointer"
+              onClick={() => {
+                const input = document.getElementById("booking-date-input") as HTMLInputElement;
+                input?.showPicker?.();
+                input?.focus();
+              }}
+            >
+              <input
+                id="booking-date-input"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                type="date"
+                className="w-full text-sm rounded-xl border border-foreground/15 bg-white/60 px-3.5 py-2.5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              />
+            </div>
 
             {/* Comment */}
             <textarea
@@ -145,7 +162,7 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
             <button
               className="w-full mt-3 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md hover:opacity-90 transition-opacity disabled:opacity-50"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
-              disabled={!selected || !phone || !date || sending}
+              disabled={!selected || phone.length !== 12 || !date || sending}
               onClick={async () => {
                 setSending(true);
                 try {
