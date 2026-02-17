@@ -15,7 +15,7 @@ const subscriptions = [
 ];
 
 const accessories = [
-  { name: "Крем для загара", price: "150 ₽" },
+  { name: "Крем для загара", price: "200 ₽" },
   { name: "Шапочка", price: "20 ₽" },
   { name: "Очки (наклейки)", price: "20 ₽" },
 ];
