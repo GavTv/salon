@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import BookButton from "@/components/BookButton";
+
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroIcon from "@/components/HeroIcon";
 import { Sun, Sparkles, Clock, Shield } from "lucide-react";
@@ -53,13 +53,6 @@ const Index = () => {
             Современное оборудование и индивидуальный подход к каждому клиенту.
           </motion.p>
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-          >
-            <BookButton />
-          </motion.div>
         </AnimatedSection>
 
         {/* Features */}
