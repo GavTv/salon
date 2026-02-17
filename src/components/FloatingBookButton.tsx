@@ -137,6 +137,18 @@ const FloatingBookButton = ({ className = "", size = "md" }: FloatingBookButtonP
                 политикой конфиденциальности
               </a>.
             </p>
+
+            {/* Submit button */}
+            <button
+              className="w-full mt-3 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-md hover:opacity-90 transition-opacity"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+              onClick={() => {
+                // TODO: handle submit
+                setIsOpen(false);
+              }}
+            >
+              Отправить
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
