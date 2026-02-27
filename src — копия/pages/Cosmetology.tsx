@@ -18,9 +18,8 @@ const facePeelings = [
   { name: "Миндальный", price: "2000 ₽" },
   { name: "Кислотный", price: "2500 ₽" },
   { name: "Джесснер", price: "3000 ₽" },
-  { name: "BioRePeel, PRX", price: "3500 ₽" },
+  { name: "BioRePeel, PRX", price: "4000 ₽" },
 ];
-
 
 const waxEpilation = [
   { name: "Усики", price: "200 ₽" },
@@ -44,7 +43,7 @@ const faceCare = [
   { name: "Аква Пилинг", price: "от 3500 ₽" },
   { name: "Карбокситерапия", price: "от 3500 ₽" },
   { name: "Уход лица Angiopharm", price: "3500 ₽" },
-  { name: "Уход для ULTRACEUTICALS", price: "5500 ₽" },
+  { name: "Уход ULTRACEUTICALS", price: "5500 ₽" },
   { name: "Массаж лица", price: "от 2500 ₽" },
 ];
 
@@ -55,8 +54,8 @@ const Cosmetology = () => {
         {/* Hero */}
         <AnimatedSection className="max-w-2xl mx-auto text-center mb-12">
           <HeroIcon icon={Sparkles} />
-          
-          <motion.h1 
+
+          <motion.h1
             className="section-title mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,15 +63,15 @@ const Cosmetology = () => {
           >
             Косметология
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-muted-foreground leading-relaxed text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Современные косметологические процедуры для красоты и здоровья вашей кожи. 
-            Индивидуальный подход и профессиональный уход.
+            Современные косметологические процедуры для красоты и здоровья вашей
+            кожи. Индивидуальный подход и профессиональный уход.
           </motion.p>
         </AnimatedSection>
 
@@ -81,26 +80,41 @@ const Cosmetology = () => {
           <AnimatedSection delay={0.1}>
             <InteractiveServiceCard title="Брови" items={eyebrows} icon={Eye} />
           </AnimatedSection>
-          
+
           <AnimatedSection delay={0.15}>
-            <InteractiveServiceCard title="Пилинги для лица" items={facePeelings} icon={Sparkles} />
+            <InteractiveServiceCard
+              title="Пилинги для лица"
+              items={facePeelings}
+              icon={Sparkles}
+            />
           </AnimatedSection>
-          
+
           <AnimatedSection delay={0.2}>
-            <InteractiveServiceCard title="Восковая эпиляция" items={waxEpilation} icon={Scissors} />
+            <InteractiveServiceCard
+              title="Восковая эпиляция"
+              items={waxEpilation}
+              icon={Scissors}
+            />
           </AnimatedSection>
-          
+
           <AnimatedSection delay={0.25}>
-            <InteractiveServiceCard title="Уход за лицом" items={faceCare} icon={Heart} />
+            <InteractiveServiceCard
+              title="Уход за лицом"
+              items={faceCare}
+              icon={Heart}
+            />
           </AnimatedSection>
         </div>
 
         {/* Info */}
-        <AnimatedSection delay={0.4} className="max-w-2xl mx-auto mt-12 text-center">
+        <AnimatedSection
+          delay={0.4}
+          className="max-w-2xl mx-auto mt-12 text-center"
+        >
           <p className="text-sm text-muted-foreground bg-secondary/30 rounded-xl p-4 border border-border/20 mb-8">
-            ⚕️ Перед процедурами необходима консультация косметолога. 
-            Все процедуры выполняются сертифицированными специалистами с использованием 
-            качественных препаратов.
+            ⚕️ Перед процедурами необходима консультация косметолога. Все
+            процедуры выполняются сертифицированными специалистами с
+            использованием качественных препаратов.
           </p>
           <BookButton />
         </AnimatedSection>

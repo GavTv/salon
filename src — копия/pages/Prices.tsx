@@ -1,7 +1,16 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion } from "framer-motion";
-import { Sun, Scissors, Palette, Droplet, Sparkles, Eye, Heart, Zap } from "lucide-react";
+import {
+  Sun,
+  Scissors,
+  Palette,
+  Droplet,
+  Sparkles,
+  Eye,
+  Heart,
+  Zap,
+} from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ServiceItem {
@@ -41,7 +50,7 @@ const PriceSection = ({ title, items, icon: Icon }: PriceSectionProps) => (
           <span className="text-foreground/80 text-sm group-hover:text-foreground transition-colors">
             {item.name}
           </span>
-          <motion.span 
+          <motion.span
             className="text-primary font-semibold text-sm whitespace-nowrap ml-4"
             whileHover={{ scale: 1.05 }}
           >
@@ -80,11 +89,17 @@ const coloringServices = [
   { name: "Тонирование", price: "от 2500 ₽" },
   { name: "Блондирование", price: "от 2500 ₽" },
   { name: "Мелирование", price: "от 3500 ₽" },
-  { name: "Сложное окрашивание (ambre, baloyash, airtouch)", price: "от 5500 ₽" },
+  {
+    name: "Сложное окрашивание (ambre, baloyash, airtouch)",
+    price: "от 5500 ₽",
+  },
 ];
 
 const hairCareServices = [
-  { name: "Абсолютное счастье для волос от Lebel (Япония)", price: "от 5000 ₽" },
+  {
+    name: "Абсолютное счастье для волос от Lebel (Япония)",
+    price: "от 5000 ₽",
+  },
   { name: "Ботокс волос (HONMA TOKIO)", price: "от 6500 ₽" },
   { name: "Кератиновое выпрямление Nano Brazil", price: "от 6500 ₽" },
   { name: "Ламинирование Constant Delight", price: "от 2500 ₽" },
@@ -104,9 +119,8 @@ const facePeelings = [
   { name: "Миндальный", price: "2000 ₽" },
   { name: "Кислотный", price: "2500 ₽" },
   { name: "Джесснер", price: "3000 ₽" },
-  { name: "BioRePeel, PRX", price: "3500 ₽" },
+  { name: "BioRePeel, PRX", price: "4000 ₽" },
 ];
-
 
 const waxEpilation = [
   { name: "Усики", price: "200 ₽" },
@@ -130,7 +144,7 @@ const faceCare = [
   { name: "Аква Пилинг", price: "от 3500 ₽" },
   { name: "Карбокситерапия", price: "от 3500 ₽" },
   { name: "Уход лица Angiopharm", price: "3500 ₽" },
-  { name: "Уход для ULTRACEUTICALS", price: "5500 ₽" },
+  { name: "Уход ULTRACEUTICALS", price: "5500 ₽" },
   { name: "Массаж лица", price: "от 2500 ₽" },
 ];
 
@@ -161,7 +175,7 @@ const Prices = () => {
       <div className="container py-12 md:py-20">
         {/* Hero */}
         <AnimatedSection className="max-w-2xl mx-auto text-center mb-12">
-          <motion.h1 
+          <motion.h1
             className="section-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -169,8 +183,8 @@ const Prices = () => {
           >
             Цены на услуги
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-muted-foreground leading-relaxed text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -187,8 +201,16 @@ const Prices = () => {
             Солярий
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <PriceSection title="Абонементы" items={solariumSubscriptions} icon={Sun} />
-            <PriceSection title="Сопутствующие товары" items={solariumAccessories} icon={Sun} />
+            <PriceSection
+              title="Абонементы"
+              items={solariumSubscriptions}
+              icon={Sun}
+            />
+            <PriceSection
+              title="Сопутствующие товары"
+              items={solariumAccessories}
+              icon={Sun}
+            />
           </div>
         </AnimatedSection>
 
@@ -199,10 +221,22 @@ const Prices = () => {
             Парикмахерские услуги
           </h2>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
-            <PriceSection title="Стрижки и укладки" items={haircutServices} icon={Scissors} />
-            <PriceSection title="Окрашивание волос" items={coloringServices} icon={Palette} />
+            <PriceSection
+              title="Стрижки и укладки"
+              items={haircutServices}
+              icon={Scissors}
+            />
+            <PriceSection
+              title="Окрашивание волос"
+              items={coloringServices}
+              icon={Palette}
+            />
           </div>
-          <PriceSection title="Уход за волосами" items={hairCareServices} icon={Droplet} />
+          <PriceSection
+            title="Уход за волосами"
+            items={hairCareServices}
+            icon={Droplet}
+          />
         </AnimatedSection>
 
         {/* Косметология */}
@@ -213,10 +247,18 @@ const Prices = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <PriceSection title="Брови" items={eyebrows} icon={Eye} />
-            <PriceSection title="Пилинги для лица" items={facePeelings} icon={Sparkles} />
+            <PriceSection
+              title="Пилинги для лица"
+              items={facePeelings}
+              icon={Sparkles}
+            />
           </div>
           <div className="grid md:grid-cols-2 gap-4">
-            <PriceSection title="Восковая эпиляция" items={waxEpilation} icon={Scissors} />
+            <PriceSection
+              title="Восковая эпиляция"
+              items={waxEpilation}
+              icon={Scissors}
+            />
             <PriceSection title="Уход за лицом" items={faceCare} icon={Heart} />
           </div>
         </AnimatedSection>
@@ -229,16 +271,25 @@ const Prices = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <PriceSection title="LPG массаж" items={lpgServices} icon={Zap} />
-            <PriceSection title="Аппаратные процедуры" items={bodyServices} icon={Zap} />
+            <PriceSection
+              title="Аппаратные процедуры"
+              items={bodyServices}
+              icon={Zap}
+            />
           </div>
-          <PriceSection title="Абонементы и комплексы" items={packages} icon={Zap} />
+          <PriceSection
+            title="Абонементы и комплексы"
+            items={packages}
+            icon={Zap}
+          />
         </AnimatedSection>
 
         {/* Info */}
         <AnimatedSection delay={0.5} className="max-w-2xl mx-auto text-center">
           <p className="text-sm text-muted-foreground bg-secondary/30 rounded-xl p-4 border border-border/20">
-            💡 Цены могут варьироваться в зависимости от сложности работы и используемых материалов. 
-            Для точной стоимости рекомендуем записаться на консультацию.
+            💡 Цены могут варьироваться в зависимости от сложности работы и
+            используемых материалов. Для точной стоимости рекомендуем записаться
+            на консультацию.
           </p>
         </AnimatedSection>
       </div>
